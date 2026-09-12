@@ -1,0 +1,17 @@
+{"id": "r01", "tool": "calculator.calculate_total", "arguments": {"unit_price": 10.0, "quantity": 3, "discount_pct": 0}, "fault": "none", "expected": {"status": "ok"}}
+{"id": "r02", "tool": "calculator.calculate_total", "arguments": {"unit_price": 25.0, "quantity": 2, "discount_pct": 10}, "fault": "none", "expected": {"status": "ok"}}
+{"id": "r03", "tool": "calculator.calculate_total", "arguments": {"unit_price": 10.0, "quantity": 0}, "fault": "none", "expected": {"status": "error", "kind": "validation"}}
+{"id": "r04", "tool": "calculator.calculate_total", "arguments": {"unit_price": "diez", "quantity": 2}, "fault": "none", "expected": {"status": "error", "kind": "validation"}}
+{"id": "r05", "tool": "catalog.lookup_stock", "arguments": {"sku": "SKU001"}, "fault": "none", "expected": {"status": "ok"}}
+{"id": "r06", "tool": "catalog.lookup_stock", "arguments": {"sku": "SKU999"}, "fault": "none", "expected": {"status": "error", "kind": "domain"}}
+{"id": "r07", "tool": "catalog.lookup_stock", "arguments": {}, "fault": "none", "expected": {"status": "error", "kind": "validation"}}
+{"id": "r08", "tool": "catalog.delete_product", "arguments": {"sku": "SKU001"}, "fault": "none", "expected": {"status": "error", "kind": "protocol"}}
+{"id": "r09", "tool": "shipping.get_quote", "arguments": {"origin": "LIM", "destination": "CUS", "weight_kg": 2}, "fault": "transient_once", "expected": {"status": "ok"}}
+{"id": "r10", "tool": "shipping.get_quote", "arguments": {"origin": "LIM", "destination": "AQP", "weight_kg": 5}, "fault": "transient_twice", "expected": {"status": "ok"}}
+{"id": "r11", "tool": "shipping.get_quote", "arguments": {"origin": "LIM", "destination": "TRU", "weight_kg": 1}, "fault": "always_transient", "expected": {"status": "error", "kind": "transient"}}
+{"id": "r12", "tool": "shipping.get_quote", "arguments": {"origin": "LIM", "destination": "CUS", "weight_kg": 1}, "fault": "slow_once", "expected": {"status": "ok"}}
+{"id": "r13", "tool": "shipping.get_quote", "arguments": {"origin": "LIM", "destination": "CUS", "weight_kg": 1}, "fault": "always_slow", "expected": {"status": "error", "kind": "timeout"}}
+{"id": "r14", "tool": "shipping.get_quote", "arguments": {"origin": "LIM", "destination": "XXX", "weight_kg": 2}, "fault": "none", "expected": {"status": "error", "kind": "domain"}}
+{"id": "r15", "tool": "shipping.get_quote", "arguments": {"origin": "LIM", "destination": "CUS", "weight_kg": 0}, "fault": "none", "expected": {"status": "error", "kind": "validation"}}
+{"id": "r16", "tool": "shipping.get_quote", "arguments": {"origin": "LIM", "destination": "CUS", "weight_kg": 2}, "fault": "internal_error", "expected": {"status": "error", "kind": "execution"}}
+{"id": "r17", "tool": "shipping.get_quote", "arguments": {"origin": "LIM", "destination": "CUS", "weight_kg": 2}, "fault": "malformed_output", "expected": {"status": "error", "kind": "output_contract"}}

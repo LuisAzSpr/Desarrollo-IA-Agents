@@ -1,0 +1,91 @@
+{
+  "version": "1.1",
+  "tools": {
+    "calculator.calculate_total": {
+      "description": "Calcula el total de una compra a partir de precio unitario, cantidad y descuento porcentual.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "unit_price": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "quantity": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100
+          },
+          "discount_pct": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "default": 0
+          }
+        },
+        "required": [
+          "unit_price",
+          "quantity"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "catalog.lookup_stock": {
+      "description": "Consulta el stock local de un producto identificado por SKU.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "sku": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 20
+          }
+        },
+        "required": [
+          "sku"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "shipping.get_quote": {
+      "description": "Obtiene una cotización local simulada de envío entre dos códigos de ciudad.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "origin": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 3
+          },
+          "destination": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 3
+          },
+          "weight_kg": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "maximum": 50
+          }
+        },
+        "required": [
+          "origin",
+          "destination",
+          "weight_kg"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "stock": {
+    "SKU001": 12,
+    "SKU002": 0,
+    "SKU003": 7,
+    "SKU004": 25
+  },
+  "routes": {
+    "LIM-CUS": 12.5,
+    "LIM-AQP": 10.0,
+    "LIM-TRU": 9.0,
+    "CUS-LIM": 13.0
+  }
+}

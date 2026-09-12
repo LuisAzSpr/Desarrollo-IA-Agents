@@ -1,0 +1,24 @@
+{"query_id": "Q01", "query": "El WiFi obtiene IP y llega a direcciones numéricas, pero los sitios por nombre no cargan. ¿Qué debo revisar?", "difficulty": "clear"}
+{"query_id": "Q02", "query": "Desde la red de invitados tengo Internet, pero no puedo llegar a un servidor interno del laboratorio.", "difficulty": "ambiguous"}
+{"query_id": "Q03", "query": "Cambié de teléfono y desde entonces la VPN rechaza el segundo factor de autenticación.", "difficulty": "clear"}
+{"query_id": "Q04", "query": "La VPN dice conectada, pero un hostname interno no resuelve aunque una IP interna sí responde.", "difficulty": "ambiguous"}
+{"query_id": "Q05", "query": "¿Qué variable debo reducir primero si un entrenamiento entra en out of memory después de cargar el modelo?", "difficulty": "ambiguous"}
+{"query_id": "Q06", "query": "Necesito conservar checkpoints de una sesión de GPU que termina hoy. ¿Dónde no debería dejarlos?", "difficulty": "clear"}
+{"query_id": "Q07", "query": "Se publicó accidentalmente un token en Git. ¿Basta con borrar el archivo en un commit nuevo?", "difficulty": "clear"}
+{"query_id": "Q08", "query": "Git no puede combinar automáticamente dos cambios en el mismo archivo. ¿Qué significa y qué debo hacer?", "difficulty": "clear"}
+{"query_id": "Q09", "query": "Quiero renovar un libro, pero otra persona ya lo reservó. ¿Puede rechazarse la renovación?", "difficulty": "clear"}
+{"query_id": "Q10", "query": "La web de una base bibliográfica abre desde casa, pero el texto completo institucional está bloqueado.", "difficulty": "ambiguous"}
+{"query_id": "Q11", "query": "El sistema no me deja inscribirme aunque hay vacantes porque no reconoce un curso previo.", "difficulty": "clear"}
+{"query_id": "Q12", "query": "Una sección está llena y aparezco en lista de espera. ¿Eso significa que ya estoy matriculado?", "difficulty": "clear"}
+{"query_id": "Q13", "query": "¿Cómo puedo detectar que un archivo de resultados cambió accidentalmente entre dos ejecuciones?", "difficulty": "ambiguous"}
+{"query_id": "Q14", "query": "Tengo datos sensibles de investigación. ¿Es suficiente ponerles un nombre poco descriptivo antes de compartirlos?", "difficulty": "clear"}
+{"query_id": "Q15", "query": "Recibí una solicitud MFA que yo no inicié. ¿Qué comportamiento recomienda la política de correo?", "difficulty": "ambiguous"}
+{"query_id": "Q16", "query": "Un compañero conocido me envió un ejecutable inesperado por correo. ¿Debo confiar solo porque conozco al remitente?", "difficulty": "clear"}
+{"query_id": "Q17", "query": "El software abre fuera del campus, pero no logra contactar al servidor que entrega la licencia.", "difficulty": "ambiguous"}
+{"query_id": "Q18", "query": "Tengo autorización para usar una aplicación, pero todos los asientos están ocupados y la activación falla temporalmente.", "difficulty": "clear"}
+{"query_id": "Q19", "query": "¿Cómo restringir temporalmente el PDF de una tesis sin eliminar su registro bibliográfico?", "difficulty": "clear"}
+{"query_id": "Q20", "query": "Después de depositar la tesis encontré una corrección. ¿Conviene reemplazar el PDF sin registrar el cambio?", "difficulty": "clear"}
+{"query_id": "Q21", "query": "Instalé una librería en mi entorno, pero el notebook sigue diciendo que no existe. ¿Qué debo comprobar?", "difficulty": "ambiguous"}
+{"query_id": "Q22", "query": "¿Qué información, además de requirements.txt, debería registrar para que un experimento sea reproducible?", "difficulty": "ambiguous"}
+{"query_id": "Q23", "query": "Una caída afecta a todos los usuarios de un servicio institucional. ¿Por qué tendría mayor prioridad que un fallo aislado?", "difficulty": "clear"}
+{"query_id": "Q24", "query": "¿Qué datos mínimos debe contener un ticket para que otra persona pueda reproducir el problema?", "difficulty": "clear"}

@@ -1,0 +1,65 @@
+# Carpetas temporales
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Entornos Python locales
+.venv/
+.venv-*/
+venv/
+env/
+ENV/
+.conda/
+.idea/
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+build/
+dist/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# Editores y sistema operativo
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Variables de entorno y secretos
+.env
+**/.env
+!**/.env.example
+!**/*.env.example
+
+# Modelos y artefactos pesados generados
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.h5
+*.npy
+*.npz
+*.parquet
+
+# Resultados regenerables
+**/outputs/cache/**
+**/outputs/tmp/**
+**/outputs/logs/**
+
+# Papers externos
+**/papers/*.pdf
+!**/papers/README.md
+!**/papers/*.bib
+
+# Mantiene placeholders deliberados
+!**/.gitkeep
+
+# Entorno y artefactos locales de CC-0F4
+.ccf04/
+.build/

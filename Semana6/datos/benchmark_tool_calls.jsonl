@@ -1,0 +1,24 @@
+{"id": "l01", "prompt": "Calcula el total de 3 unidades a 10 soles cada una.", "expected_tool": "calculator.calculate_total", "expected_arguments": {"unit_price": 10.0, "quantity": 3}, "should_call_tool": true}
+{"id": "l02", "prompt": "Tengo 2 productos de 25 soles con 10% de descuento. ¿Cuál es el total?", "expected_tool": "calculator.calculate_total", "expected_arguments": {"unit_price": 25.0, "quantity": 2, "discount_pct": 10.0}, "should_call_tool": true}
+{"id": "l03", "prompt": "Calcula 8 unidades a 4.5 soles.", "expected_tool": "calculator.calculate_total", "expected_arguments": {"unit_price": 4.5, "quantity": 8}, "should_call_tool": true}
+{"id": "l04", "prompt": "¿Cuánto pago por 1 artículo de 99.9 soles?", "expected_tool": "calculator.calculate_total", "expected_arguments": {"unit_price": 99.9, "quantity": 1}, "should_call_tool": true}
+{"id": "l05", "prompt": "Son 5 unidades de 12 soles con 20% de descuento.", "expected_tool": "calculator.calculate_total", "expected_arguments": {"unit_price": 12.0, "quantity": 5, "discount_pct": 20.0}, "should_call_tool": true}
+{"id": "l06", "prompt": "Calcula el total de 4 unidades a 7.5 sin descuento.", "expected_tool": "calculator.calculate_total", "expected_arguments": {"unit_price": 7.5, "quantity": 4, "discount_pct": 0.0}, "should_call_tool": true}
+{"id": "l07", "prompt": "¿Cuánto stock queda de SKU001?", "expected_tool": "catalog.lookup_stock", "expected_arguments": {"sku": "SKU001"}, "should_call_tool": true}
+{"id": "l08", "prompt": "Consulta existencias de SKU002.", "expected_tool": "catalog.lookup_stock", "expected_arguments": {"sku": "SKU002"}, "should_call_tool": true}
+{"id": "l09", "prompt": "Necesito saber el inventario de SKU003.", "expected_tool": "catalog.lookup_stock", "expected_arguments": {"sku": "SKU003"}, "should_call_tool": true}
+{"id": "l10", "prompt": "Busca el stock del código SKU004.", "expected_tool": "catalog.lookup_stock", "expected_arguments": {"sku": "SKU004"}, "should_call_tool": true}
+{"id": "l11", "prompt": "¿Existe disponibilidad para SKU001?", "expected_tool": "catalog.lookup_stock", "expected_arguments": {"sku": "SKU001"}, "should_call_tool": true}
+{"id": "l12", "prompt": "Revisa inventario del producto SKU002.", "expected_tool": "catalog.lookup_stock", "expected_arguments": {"sku": "SKU002"}, "should_call_tool": true}
+{"id": "l13", "prompt": "Cotiza 2 kg de LIM a CUS.", "expected_tool": "shipping.get_quote", "expected_arguments": {"origin": "LIM", "destination": "CUS", "weight_kg": 2.0}, "should_call_tool": true}
+{"id": "l14", "prompt": "Necesito una cotización para 5 kg desde LIM hacia AQP.", "expected_tool": "shipping.get_quote", "expected_arguments": {"origin": "LIM", "destination": "AQP", "weight_kg": 5.0}, "should_call_tool": true}
+{"id": "l15", "prompt": "¿Cuánto cuesta enviar 1 kg de Lima a Trujillo? Usa los códigos LIM y TRU.", "expected_tool": "shipping.get_quote", "expected_arguments": {"origin": "LIM", "destination": "TRU", "weight_kg": 1.0}, "should_call_tool": true}
+{"id": "l16", "prompt": "Cotiza 3.5 kg desde CUS a LIM.", "expected_tool": "shipping.get_quote", "expected_arguments": {"origin": "CUS", "destination": "LIM", "weight_kg": 3.5}, "should_call_tool": true}
+{"id": "l17", "prompt": "Precio de envío de 0.5 kg LIM-CUS.", "expected_tool": "shipping.get_quote", "expected_arguments": {"origin": "LIM", "destination": "CUS", "weight_kg": 0.5}, "should_call_tool": true}
+{"id": "l18", "prompt": "Obtén cotización para 10 kg LIM-AQP.", "expected_tool": "shipping.get_quote", "expected_arguments": {"origin": "LIM", "destination": "AQP", "weight_kg": 10.0}, "should_call_tool": true}
+{"id": "l19", "prompt": "Explica qué es un contrato de software.", "expected_tool": null, "expected_arguments": {}, "should_call_tool": false}
+{"id": "l20", "prompt": "¿Cuál es la diferencia entre retry y repair?", "expected_tool": null, "expected_arguments": {}, "should_call_tool": false}
+{"id": "l21", "prompt": "Resume por qué un timeout no es lo mismo que un error de validación.", "expected_tool": null, "expected_arguments": {}, "should_call_tool": false}
+{"id": "l22", "prompt": "¿Qué significa idempotencia?", "expected_tool": null, "expected_arguments": {}, "should_call_tool": false}
+{"id": "l23", "prompt": "Define function calling en una oración.", "expected_tool": null, "expected_arguments": {}, "should_call_tool": false}
+{"id": "l24", "prompt": "¿Por qué una salida JSON válida puede ser semánticamente incorrecta?", "expected_tool": null, "expected_arguments": {}, "should_call_tool": false}

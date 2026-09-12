@@ -1,0 +1,591 @@
+<title>De NLP a Transformers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+  :root {
+    --paper: #F3F4F7;
+    --surface: #FFFFFF;
+    --surface-2: #EAECF1;
+    --ink: #191E2A;
+    --muted: #545D6E;
+    --faint: #838C9C;
+    --border: #E1E4EB;
+    --border-strong: #CDD2DC;
+    --accent: #4B3FB8;
+    --accent-ink: #3E33A0;
+    --accent-soft: #ECEAFB;
+    --accent-line: #D9D5F4;
+    --amber: #B26A00;
+    --amber-strong: #E39A1C;
+    --amber-soft: #FBEECF;
+    --amber-line: #EBD6A2;
+    --shadow: 0 1px 2px rgba(25,30,42,.05), 0 10px 30px -18px rgba(25,30,42,.28);
+    --font-head: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --font-body: 'Source Sans 3', system-ui, -apple-system, Segoe UI, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    --maxw: 46rem;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --paper: #0C0F17;
+      --surface: #141926;
+      --surface-2: #1B2130;
+      --ink: #E7EAF1;
+      --muted: #9BA4B5;
+      --faint: #6C7688;
+      --border: #232B3A;
+      --border-strong: #313A4B;
+      --accent: #9A8CFF;
+      --accent-ink: #B4AAFF;
+      --accent-soft: #191A33;
+      --accent-line: #2E2A55;
+      --amber: #E6A63C;
+      --amber-strong: #F4B84E;
+      --amber-soft: #241C0E;
+      --amber-line: #463813;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 14px 36px -20px rgba(0,0,0,.75);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper: #0C0F17;
+    --surface: #141926;
+    --surface-2: #1B2130;
+    --ink: #E7EAF1;
+    --muted: #9BA4B5;
+    --faint: #6C7688;
+    --border: #232B3A;
+    --border-strong: #313A4B;
+    --accent: #9A8CFF;
+    --accent-ink: #B4AAFF;
+    --accent-soft: #191A33;
+    --accent-line: #2E2A55;
+    --amber: #E6A63C;
+    --amber-strong: #F4B84E;
+    --amber-soft: #241C0E;
+    --amber-line: #463813;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 14px 36px -20px rgba(0,0,0,.75);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--font-body); font-size: 17px; line-height: 1.65;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: clamp(1.4rem,4vw,3rem) clamp(1.1rem,4vw,1.75rem) 5rem; }
+
+  .topbar { display: flex; justify-content: flex-end; margin-bottom: 1rem; }
+  .toggle {
+    display: inline-flex; align-items: center; gap: .5rem; background: var(--surface); color: var(--muted);
+    border: 1px solid var(--border); border-radius: 999px; padding: .38rem .7rem;
+    font-family: var(--font-mono); font-size: .72rem; letter-spacing: .03em; cursor: pointer;
+    transition: color .18s, border-color .18s;
+  }
+  .toggle:hover { color: var(--ink); border-color: var(--border-strong); }
+  .toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .toggle svg { width: 15px; height: 15px; }
+
+  .eyebrow { font-family: var(--font-mono); font-size: .74rem; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--accent-ink); display: flex; align-items: center; gap: .6rem; margin-bottom: 1.1rem; }
+  .eyebrow::before { content: ""; width: 1.6rem; height: 2px; background: var(--accent); }
+  h1 { font-family: var(--font-head); font-weight: 600; font-size: clamp(2.3rem,7vw,3.5rem); line-height: 1.02;
+    letter-spacing: -.015em; margin: 0 0 1rem; text-wrap: balance; }
+  h1 em { font-style: italic; color: var(--accent-ink); }
+  .lede { font-size: 1.15rem; color: var(--muted); margin: 0; text-wrap: pretty; }
+  .meta-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.5rem; }
+  .tag { font-family: var(--font-mono); font-size: .71rem; color: var(--muted); background: var(--surface-2);
+    border: 1px solid var(--border); padding: .3rem .6rem; border-radius: 7px; }
+
+  .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.3rem 1.5rem;
+    box-shadow: var(--shadow); margin: 2.5rem 0 3rem; }
+  .toc h2 { margin: 0 0 .9rem; font-family: var(--font-mono); font-size: .76rem; text-transform: uppercase;
+    letter-spacing: .12em; color: var(--faint); font-weight: 600; }
+  .toc ol { margin: 0; padding: 0; list-style: none; counter-reset: toc; display: grid; gap: .45rem; }
+  .toc li { counter-increment: toc; }
+  .toc a { display: flex; gap: .8rem; align-items: baseline; text-decoration: none; color: var(--ink);
+    font-size: .98rem; padding: .12rem 0; transition: color .15s; }
+  .toc a::before { content: counter(toc,decimal-leading-zero); font-family: var(--font-mono); font-size: .78rem;
+    color: var(--accent-ink); flex: none; }
+  .toc a:hover { color: var(--accent-ink); }
+  .toc a:hover span { text-decoration: underline; text-underline-offset: 3px; }
+
+  section { margin-top: 3.4rem; scroll-margin-top: 1.5rem; }
+  .kicker { font-family: var(--font-mono); font-size: .74rem; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--accent-ink); margin: 0 0 .5rem; }
+  h2.title { font-family: var(--font-head); font-weight: 600; font-size: clamp(1.6rem,4.5vw,2.15rem);
+    line-height: 1.12; letter-spacing: -.01em; margin: 0 0 1rem; text-wrap: balance; }
+  h3 { font-family: var(--font-head); font-weight: 600; font-size: 1.28rem; margin: 2rem 0 .6rem; letter-spacing: -.005em; }
+  p { margin: 0 0 1.05rem; }
+  a.inline { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 2px; }
+  strong { font-weight: 600; }
+  .hl { background: linear-gradient(transparent 62%, var(--amber-soft) 62%); padding: 0 .05em; font-weight: 600; }
+  em.term { font-style: normal; font-weight: 600; color: var(--accent-ink); }
+  code { font-family: var(--font-mono); font-size: .82em; background: var(--surface-2); border: 1px solid var(--border);
+    padding: .08rem .34rem; border-radius: 5px; }
+
+  ul.clean { margin: 0 0 1.1rem; padding-left: 1.2rem; }
+  ul.clean li { margin-bottom: .5rem; }
+  ul.clean li::marker { color: var(--accent); }
+
+  .bridge { background: var(--accent-soft); border: 1px solid var(--accent-line); border-radius: 13px;
+    padding: 1.15rem 1.35rem; margin: 1.6rem 0; }
+  .bridge .lab { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--accent-ink); font-weight: 600; display: flex; align-items: center; gap: .5rem; margin-bottom: .55rem; }
+  .bridge .lab svg { width: 15px; height: 15px; flex: none; }
+  .bridge p { margin: 0; font-size: .96rem; }
+  .bridge p + p { margin-top: .6rem; }
+
+  .key { border-left: 3px solid var(--amber-strong); background: var(--amber-soft); border-radius: 0 11px 11px 0;
+    padding: .95rem 1.25rem; margin: 1.6rem 0; }
+  .key .lab { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--amber); font-weight: 600; margin-bottom: .35rem; }
+  .key p { margin: 0; font-size: .97rem; }
+
+  .formula { font-family: var(--font-head); background: var(--surface); border: 1px solid var(--border);
+    border-radius: 11px; padding: 1.1rem 1.2rem; margin: 1.4rem 0; text-align: center; font-size: 1.2rem;
+    overflow-x: auto; box-shadow: var(--shadow); }
+  .formula i { font-style: italic; }
+  .formula .op { font-style: normal; font-family: var(--font-body); font-weight: 600; }
+  .formula sub { font-size: .62em; }
+  .formula sup { font-size: .62em; }
+  .frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; margin: 0 .18em; }
+  .frac .n { border-bottom: 1.5px solid currentColor; padding: 0 .4em .05em; }
+  .frac .d { padding: .1em .4em 0; }
+  .rad { border-top: 1.5px solid currentColor; padding-top: 1px; }
+  .fx-note { text-align: center; font-family: var(--font-mono); font-size: .74rem; color: var(--faint); margin: -.7rem 0 1.4rem; }
+
+  .flow { display: flex; flex-wrap: wrap; align-items: stretch; gap: .5rem; margin: 1.5rem 0; }
+  .flow .node { flex: 1 1 5.5rem; min-width: 5rem; background: var(--surface); border: 1px solid var(--border-strong);
+    border-radius: 10px; padding: .7rem .5rem; text-align: center; box-shadow: var(--shadow); }
+  .flow .node .t { font-family: var(--font-mono); font-size: .68rem; text-transform: uppercase; letter-spacing: .05em;
+    color: var(--faint); display: block; margin-bottom: .2rem; }
+  .flow .node .v { font-weight: 600; font-size: .9rem; }
+  .flow .arw { align-self: center; color: var(--accent); font-weight: 700; flex: none; }
+
+  .grids { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin: 1.5rem 0; }
+  @media (max-width: 540px) { .grids { grid-template-columns: 1fr; } }
+  .gcard { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1rem; box-shadow: var(--shadow); }
+  .gcard h4 { margin: 0 0 .7rem; font-family: var(--font-mono); font-size: .74rem; text-transform: uppercase;
+    letter-spacing: .05em; color: var(--muted); font-weight: 600; text-align: center; }
+  .amx { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px; }
+  .amx .c { aspect-ratio: 1; border-radius: 4px; display: grid; place-items: center; font-family: var(--font-mono); font-size: .6rem; }
+  .amx .on { background: var(--amber-soft); border: 1px solid var(--amber-line); color: var(--amber); }
+  .amx .hi { background: var(--amber-strong); color: #23180a; border: 1px solid var(--amber-strong); font-weight: 700; }
+  .amx .off { background: var(--surface-2); border: 1px solid var(--border); color: var(--faint); opacity: .55; }
+  .caption { font-size: .85rem; color: var(--faint); text-align: center; margin: .3rem 0 0; }
+
+  .stack { display: grid; gap: .45rem; margin: 1.5rem auto; max-width: 24rem; }
+  .stack .b { border-radius: 9px; padding: .6rem .8rem; font-size: .9rem; text-align: center; border: 1px solid var(--border-strong); background: var(--surface); }
+  .stack .b.accent { background: var(--accent-soft); border-color: var(--accent-line); color: var(--accent-ink); font-weight: 600; }
+  .stack .b.res { background: var(--surface-2); font-family: var(--font-mono); font-size: .76rem; color: var(--muted); }
+  .stack .plus { text-align: center; color: var(--faint); font-family: var(--font-mono); font-size: .8rem; }
+
+  .tablewrap { overflow-x: auto; margin: 1.5rem 0; border: 1px solid var(--border); border-radius: 12px; }
+  table { border-collapse: collapse; width: 100%; font-size: .93rem; min-width: 30rem; }
+  th, td { text-align: left; padding: .7rem .9rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  thead th { background: var(--surface-2); font-family: var(--font-mono); font-size: .72rem; text-transform: uppercase;
+    letter-spacing: .04em; color: var(--muted); font-weight: 600; }
+  tbody tr:last-child td { border-bottom: none; }
+  td.old { color: var(--muted); }
+  td.new { color: var(--ink); font-weight: 600; }
+  td .num { font-variant-numeric: tabular-nums; font-family: var(--font-mono); font-size: .85rem; }
+  .code-map { font-family: var(--font-mono); font-size: .8rem; color: var(--accent-ink); }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem,1fr)); gap: .8rem; margin: 1.5rem 0; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 11px; padding: .9rem 1rem; box-shadow: var(--shadow); }
+  .card .tagline { font-family: var(--font-mono); font-size: .64rem; text-transform: uppercase; letter-spacing: .05em;
+    color: var(--accent-ink); display: block; margin-bottom: .35rem; }
+  .card h4 { margin: 0 0 .35rem; font-size: .98rem; font-family: var(--font-head); font-weight: 600; }
+  .card p { margin: 0; font-size: .85rem; color: var(--muted); line-height: 1.5; }
+
+  .gloss { display: grid; gap: 0; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin: 1.5rem 0; }
+  .gloss .row { display: grid; grid-template-columns: 11rem 1fr; gap: 1rem; padding: .8rem 1rem; border-bottom: 1px solid var(--border); background: var(--surface); }
+  .gloss .row:last-child { border-bottom: none; }
+  @media (max-width: 520px) { .gloss .row { grid-template-columns: 1fr; gap: .2rem; } }
+  .gloss dt { font-family: var(--font-mono); font-size: .82rem; color: var(--accent-ink); font-weight: 600; margin: 0; }
+  .gloss dd { margin: 0; font-size: .93rem; color: var(--muted); }
+
+  footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--faint); font-size: .85rem; }
+  footer .mono { font-family: var(--font-mono); }
+  .end-note { background: var(--surface); border: 1px dashed var(--border-strong); border-radius: 12px; padding: 1.2rem 1.4rem; margin-top: 2rem; }
+  .end-note h3 { margin-top: 0; }
+</style>
+
+<div class="wrap">
+  <div class="topbar">
+    <button class="toggle" id="themeToggle" type="button" aria-label="Cambiar tema">
+      <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg>
+      <span id="themeText">Tema</span>
+    </button>
+  </div>
+
+  <header>
+    <div class="eyebrow">CC-0F4 · Semana 1 · Guía de estudio</div>
+    <h1>De NLP clásico a <em>Transformers</em></h1>
+    <p class="lede">Ya sabes vectorizar texto, quitar stop words y clasificar sentimiento. Esta guía parte de ahí para explicarte, pieza por pieza, cómo funciona la atención — apoyándose en tus dos lecturas y mapeando cada idea a tu <code>Cuaderno1</code>.</p>
+    <div class="meta-row">
+      <span class="tag">Para quien viene de ML / NLP</span>
+      <span class="tag">Basada en Lectura 1, Lectura 2 y Cuaderno 1</span>
+      <span class="tag">Tokens → Q/K/V → MHA → bloque</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Contenido">
+    <h2>En esta guía</h2>
+    <ol>
+      <li><a href="#s1"><span>De un modelo a un sistema de IA compuesto</span></a></li>
+      <li><a href="#s2"><span>El puente: de las RNN y el NLP clásico a la atención</span></a></li>
+      <li><a href="#s3"><span>Entrada: texto → tokens → IDs → embeddings → posición</span></a></li>
+      <li><a href="#s4"><span>El corazón: self-attention y Q, K, V</span></a></li>
+      <li><a href="#s5"><span>Causalidad: la máscara que prohíbe ver el futuro</span></a></li>
+      <li><a href="#s6"><span>Multi-Head Attention (y qué dicen sus ablaciones)</span></a></li>
+      <li><a href="#s7"><span>El bloque Transformer: residual, LayerNorm y FFN</span></a></li>
+      <li><a href="#s8"><span>Tres familias y tres tipos de atención</span></a></li>
+      <li><a href="#s9"><span>¿Por qué atención? Paralelismo, camino y coste</span></a></li>
+      <li><a href="#s10"><span>Del Transformer de 2017 a los modelos de hoy</span></a></li>
+      <li><a href="#s11"><span>La regla del curso: medir y leer con criterio</span></a></li>
+      <li><a href="#s12"><span>Glosario: tu vocabulario ↔ el nuevo</span></a></li>
+    </ol>
+  </nav>
+
+  <section id="s1">
+    <p class="kicker">Sección 1</p>
+    <h2 class="title">De un modelo a un sistema de IA compuesto</h2>
+    <p>En tu trabajo de análisis de sentimiento seguramente construiste una <strong>tubería</strong>: limpiar texto → vectorizar (TF-IDF) → un clasificador (regresión logística, SVM). El resultado no era “un modelo”, era un <em class="term">sistema</em> de varias piezas.</p>
+    <p>El curso hace explícita esa distinción. Un <em class="term">modelo</em> (por ejemplo, un Transformer) es <em>un componente</em>. Un <em class="term">sistema de IA compuesto</em> conecta ese componente con otros: recuperación, herramientas, memoria, validación. La Semana 1 se centra en entender bien <strong>un</strong> componente —el Transformer— porque es el ladrillo con el que se construye casi todo lo demás.</p>
+    <div class="key">
+      <div class="lab">Idea clave</div>
+      <p>La cadena mental de todo el curso es: <code>modelo → componente → implementación → métrica → evidencia → sistema</code>. Hoy trabajamos el primer eslabón.</p>
+    </div>
+  </section>
+
+  <section id="s2">
+    <p class="kicker">Sección 2</p>
+    <h2 class="title">El puente: de las RNN y el NLP clásico a la atención</h2>
+    <p>Si tocaste RNN o LSTM, recordarás que procesaban la frase <strong>paso a paso</strong>: el estado de una posición dependía del anterior.</p>
+    <div class="formula" style="font-size:1.05rem"><i>h</i><sub>t</sub> = <i>f</i>(<i>h</i><sub>t−1</sub>, <i>x</i><sub>t</sub>)</div>
+    <p>Eso encadena dependencias temporales: para que la palabra 1 influya en la palabra 50, la información atraviesa 49 pasos. Dos consecuencias: es difícil paralelizar (cada paso espera al anterior) y las relaciones lejanas se diluyen por el camino.</p>
+    <p>El Transformer propone algo más radical: <span class="hl">conectar directamente cualquier par de posiciones mediante atención</span>, sin recurrencia. Un matiz histórico importante que subraya tu <em>Lectura 2</em>: la atención <em>ya existía</em> en modelos previos; la contribución del paper de 2017 fue convertirla en el <strong>mecanismo estructural principal</strong>, no un añadido.</p>
+    <p>Y casi todo lo nuevo tiene un equivalente en lo que ya hacías. La diferencia central es una sola: antes el significado de una palabra estaba <strong>fijado de antemano</strong>; ahora se <strong>recalcula según el contexto</strong>.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>En tu mundo (NLP clásico)</th><th>En el Transformer</th></tr></thead>
+        <tbody>
+          <tr><td class="old">Bag-of-Words / TF-IDF: cuentas de palabras, sin orden</td><td class="new">Embeddings + codificación posicional: mantienen orden y semántica</td></tr>
+          <tr><td class="old">word2vec / GloVe: un vector fijo por palabra</td><td class="new">Representaciones contextuales: el vector cambia según la frase</td></tr>
+          <tr><td class="old">Stop words: decides a mano qué palabras “no importan”</td><td class="new">Atención: el modelo <em>aprende</em> cuánto pesa cada palabra, y para cada palabra</td></tr>
+          <tr><td class="old">RNN / LSTM: leen la secuencia paso a paso</td><td class="new">Self-attention: conecta toda la secuencia a la vez, en paralelo</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="bridge">
+      <div class="lab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7A5 5 0 0 1 7 7h2M15 7h2a5 5 0 0 1 0 10h-2M8 12h8"/></svg>Puente con tu mundo</div>
+      <p>Piensa en <strong>stop words</strong>. Tú marcabas “the”, “is”, “a” como ruido y las quitabas por igual para todos los documentos. La atención hace algo más fino: para la palabra “runs” quizá “fast” pesa mucho y “the” casi nada, pero para otra palabra los pesos son distintos. <span class="hl">No hay lista fija: hay pesos aprendidos y dependientes del contexto.</span></p>
+    </div>
+  </section>
+
+  <section id="s3">
+    <p class="kicker">Sección 3</p>
+    <h2 class="title">Entrada: texto → tokens → IDs → embeddings → posición</h2>
+    <p>Antes de que exista “atención”, el texto tiene que volverse números. Esta cadena te resultará familiar, con matices nuevos:</p>
+    <div class="flow">
+      <div class="node"><span class="t">texto</span><span class="v">"the llama runs"</span></div>
+      <div class="arw">→</div>
+      <div class="node"><span class="t">tokens</span><span class="v">the · llama · runs</span></div>
+      <div class="arw">→</div>
+      <div class="node"><span class="t">IDs</span><span class="v">4 · 12 · 9</span></div>
+      <div class="arw">→</div>
+      <div class="node"><span class="t">embeddings</span><span class="v">vectores</span></div>
+      <div class="arw">→</div>
+      <div class="node"><span class="t">+ posición</span><span class="v">orden</span></div>
+    </div>
+    <h3>Tokenización</h3>
+    <p>Tu <code>Cuaderno1</code> tokeniza por espacios (<code>basic_tokenize</code>) solo para aislar la mecánica. En sistemas reales se usa <em class="term">subword</em>: BERT usa WordPiece con tokens como <code>[CLS] [SEP] [MASK] [PAD]</code>; otras familias usan BPE o SentencePiece. Resuelve el problema de palabras fuera de vocabulario que en TF-IDF tratabas con <code>&lt;unk&gt;</code>.</p>
+    <h3>De tokens a IDs a embeddings</h3>
+    <p>La clase <code>SimpleVocab</code> asigna un entero a cada token (más los especiales <code>&lt;pad&gt; &lt;bos&gt; &lt;eos&gt; &lt;unk&gt;</code>). Luego una tabla (<code>nn.Embedding</code>) convierte cada ID en un vector.</p>
+    <div class="bridge">
+      <div class="lab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7A5 5 0 0 1 7 7h2M15 7h2a5 5 0 0 1 0 10h-2M8 12h8"/></svg>Puente con tu mundo</div>
+      <p>Esa tabla de embeddings es <strong>la idea de word2vec</strong>: una matriz con una fila por token. Diferencia: aquí no se entrena aparte, se aprende <em>junto con</em> el modelo para la tarea. Y —lo nuevo— este vector es solo el <strong>punto de partida</strong>: la atención lo contextualizará.</p>
+    </div>
+    <h3>Posición: el detalle que rompe la intuición</h3>
+    <p>La atención, por sí sola, <strong>no sabe el orden</strong>: trata la frase como un conjunto. “el perro muerde al hombre” y “el hombre muerde al perro” le parecerían iguales. Por eso hay que inyectar la posición a propósito. El paper de 2017 lo hace sumando una <em class="term">codificación sinusoidal</em>:</p>
+    <div class="formula" style="font-size:1.05rem">
+      <span class="op">PE</span>(<i>pos</i>, 2<i>i</i>) = <span class="op">sin</span><span style="font-size:1.2em">(</span><span class="frac"><span class="n"><i>pos</i></span><span class="d">10000<sup>2<i>i</i>/<i>d</i></sup></span></span><span style="font-size:1.2em">)</span><span style="margin:0 .8em"></span>
+      <span class="op">PE</span>(<i>pos</i>, 2<i>i</i>+1) = <span class="op">cos</span>(&#8202;…&#8202;)
+    </div>
+    <p>Tu cuaderno muestra cuatro estrategias, y el propio material insiste en usar <strong>una sola</strong> por baseline (combinarlas es una ablación, no la norma):</p>
+    <ul class="clean">
+      <li><strong>Sinusoidal</strong> (<code>SinusoidalPositionalEncoding</code>): patrón fijo de senos/cosenos que se suma al embedding.</li>
+      <li><strong>Aprendida</strong> (<code>LearnedPositionalEncoding</code>): una tabla de posiciones entrenable.</li>
+      <li><strong>RoPE</strong> (<code>RotaryEmbedding</code>): rota pares de dimensiones de Q y K según la posición. Es el <em>baseline moderno recomendado</em> del cuaderno.</li>
+      <li><strong>ALiBi</strong> (<code>get_alibi_slopes</code>): añade un sesgo lineal a los scores que penaliza la distancia; sin embeddings posicionales de entrada.</li>
+    </ul>
+    <div class="key">
+      <div class="lab">Idea clave</div>
+      <p>En BoW/TF-IDF tirabas el orden. Aquí el orden es información de primera clase — y hay que añadirlo a propósito, porque al quitar la recurrencia se perdió “gratis”.</p>
+    </div>
+  </section>
+
+  <section id="s4">
+    <p class="kicker">Sección 4</p>
+    <h2 class="title">El corazón: self-attention y Q, K, V</h2>
+    <p>Aquí está la idea central. Para cada token, la atención responde: <em>“de todos los tokens de la frase, ¿a cuáles miro, y cuánto, para entenderme mejor?”</em> Se implementa con tres proyecciones lineales de la misma entrada <i>X</i>:</p>
+    <div class="formula"><i>Q</i> = <i>X</i><i>W</i><sub>Q</sub><span style="margin:0 1.2em"></span><i>K</i> = <i>X</i><i>W</i><sub>K</sub><span style="margin:0 1.2em"></span><i>V</i> = <i>X</i><i>W</i><sub>V</sub></div>
+    <p>Una analogía útil (aunque tu <em>Lectura 2</em> avisa: son nombres, no hay que tomarlos literalmente):</p>
+    <ul class="clean">
+      <li><strong>Query</strong> (<i>Q</i>) — la representación desde la que un token <em>busca</em> información.</li>
+      <li><strong>Key</strong> (<i>K</i>) — la representación contra la que se mide <em>compatibilidad</em>.</li>
+      <li><strong>Value</strong> (<i>V</i>) — la <em>información</em> que se combinará si hay compatibilidad.</li>
+    </ul>
+    <p>El mecanismo compara cada query con todas las keys, normaliza esas similitudes en pesos que suman 1, y con ellos mezcla los values. Toda la operación es esta fórmula:</p>
+    <div class="formula">
+      <span class="op">Attention</span>(<i>Q</i>,<i>K</i>,<i>V</i>) = <span class="op">softmax</span>&#8202;<span style="font-size:1.3em">(</span><span class="frac"><span class="n"><i>QK</i><sup>⊤</sup></span><span class="d"><span class="rad"><i>d</i><sub>k</sub></span></span></span> + <i>M</i><span style="font-size:1.3em">)</span>&#8202;<i>V</i>
+    </div>
+    <p class="fx-note">en tu cuaderno: la función <code>scaled_dot_product_attention</code></p>
+    <ul class="clean">
+      <li><strong><i>QK</i><sup>⊤</sup></strong> — cada query contra cada key. Con <i>Q</i>, <i>K</i> de <i>T</i> tokens, da una matriz <strong><i>T</i>×<i>T</i></strong> de compatibilidades: fila = query, columna = key.</li>
+      <li><strong>÷ <span class="rad" style="border-top-width:1px"><i>d</i><sub>k</sub></span> (el escalado)</strong> — si las componentes tienen media 0 y varianza 1, la varianza del producto punto <strong>crece con <i>d</i><sub>k</sub></strong>. Sin escalar, con dimensiones grandes los logits se disparan, el softmax se satura (casi todo el peso a un token) y los gradientes se vuelven diminutos. Dividir por <span class="rad" style="border-top-width:1px"><i>d</i><sub>k</sub></span> mantiene la escala sana.</li>
+      <li><strong>softmax</strong> — convierte cada fila en una distribución: pesos positivos que <strong>suman 1</strong>.</li>
+      <li><strong>× <i>V</i></strong> — promedia los values con esos pesos. La salida de cada token es una mezcla ponderada de la información a la que decidió atender.</li>
+    </ul>
+    <div class="bridge">
+      <div class="lab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7A5 5 0 0 1 7 7h2M15 7h2a5 5 0 0 1 0 10h-2M8 12h8"/></svg>Puente con tu mundo</div>
+      <p>El softmax ya lo usabas en la capa final de un clasificador para repartir probabilidad entre clases. Aquí reparte <strong>atención entre tokens</strong>. Y <i>QK</i><sup>⊤</sup> es una <strong>similitud</strong>, primo cercano del coseno con el que comparabas documentos.</p>
+    </div>
+    <div class="key">
+      <div class="lab">Ojo con esto</div>
+      <p>Que <i>Q</i>, <i>K</i> y <i>V</i> salgan de la <em>misma</em> <i>X</i> es lo que hace que se llame <strong>self</strong>-attention: la frase se atiende a sí misma.</p>
+    </div>
+  </section>
+
+  <section id="s5">
+    <p class="kicker">Sección 5</p>
+    <h2 class="title">Causalidad: la máscara que prohíbe ver el futuro</h2>
+    <p>Si el modelo debe <em>generar</em> texto token a token (como GPT), hay una regla sagrada: al predecir el token <i>i</i> no puede haber mirado los que vienen <em>después</em>. Si no, usaría la respuesta para predecir la respuesta.</p>
+    <p>Se impone con una <em class="term">máscara causal</em> <i>M</i> sumada a los scores <strong>antes</strong> del softmax:</p>
+    <div class="formula">
+      <i>M</i><sub>ij</sub> = <span style="font-size:1.4em;vertical-align:-.3em">{</span>&#8202;<span style="display:inline-flex;flex-direction:column;text-align:left;font-size:.82em;vertical-align:middle"><span>0&nbsp;&nbsp;&nbsp;si <i>j</i> ≤ <i>i</i>&nbsp;&nbsp;(pasado o presente)</span><span>−∞&nbsp;&nbsp;si <i>j</i> &gt; <i>i</i>&nbsp;&nbsp;(futuro)</span></span>
+    </div>
+    <p>Al sumar <strong>−∞</strong> a las posiciones futuras, el softmax (que exponencia) las convierte en <strong>peso ≈ 0</strong>. El futuro queda apagado sin tocar nada más. En el código: <code>scores.masked_fill(~mask, -inf)</code>.</p>
+    <div class="grids">
+      <div class="gcard">
+        <h4>Full attention</h4>
+        <div class="amx">
+          <div class="c on">·</div><div class="c on">·</div><div class="c on">·</div><div class="c on">·</div><div class="c hi">·</div>
+          <div class="c on">·</div><div class="c on">·</div><div class="c on">·</div><div class="c hi">·</div><div class="c on">·</div>
+          <div class="c on">·</div><div class="c on">·</div><div class="c hi">·</div><div class="c on">·</div><div class="c on">·</div>
+          <div class="c on">·</div><div class="c hi">·</div><div class="c on">·</div><div class="c on">·</div><div class="c on">·</div>
+          <div class="c hi">·</div><div class="c on">·</div><div class="c on">·</div><div class="c on">·</div><div class="c on">·</div>
+        </div>
+        <p class="caption">cada token mira a todos</p>
+      </div>
+      <div class="gcard">
+        <h4>Causal attention</h4>
+        <div class="amx">
+          <div class="c hi">·</div><div class="c off">×</div><div class="c off">×</div><div class="c off">×</div><div class="c off">×</div>
+          <div class="c on">·</div><div class="c hi">·</div><div class="c off">×</div><div class="c off">×</div><div class="c off">×</div>
+          <div class="c on">·</div><div class="c on">·</div><div class="c hi">·</div><div class="c off">×</div><div class="c off">×</div>
+          <div class="c on">·</div><div class="c on">·</div><div class="c on">·</div><div class="c hi">·</div><div class="c off">×</div>
+          <div class="c on">·</div><div class="c on">·</div><div class="c on">·</div><div class="c on">·</div><div class="c hi">·</div>
+        </div>
+        <p class="caption">solo pasado y presente (triangular)</p>
+      </div>
+    </div>
+    <p>Filas = queries; columnas = keys. En la causal, todo lo que está por encima de la diagonal (el futuro) está apagado. Esa forma triangular es la firma visual de la causalidad.</p>
+    <div class="key">
+      <div class="lab">El malentendido más común</div>
+      <p><strong>Paralelismo ≠ ver el futuro.</strong> En entrenamiento toda la frase se procesa a la vez (en paralelo), pero la máscara impide que la posición <i>i</i> use tokens posteriores — así que el modelo sigue siendo autoregresivo. Y la causalidad <strong>no</strong> la produce el softmax ni el escalado: la produce la máscara.</p>
+    </div>
+  </section>
+
+  <section id="s6">
+    <p class="kicker">Sección 6</p>
+    <h2 class="title">Multi-Head Attention (y qué dicen sus ablaciones)</h2>
+    <p>En lugar de una atención, se calculan <em>varias en paralelo</em>, cada una en un subespacio. Cada una es una <em class="term">cabeza</em>. Con <i>H</i> cabezas y dimensión <i>d</i><sub>model</sub>:</p>
+    <div class="formula"><i>d</i><sub>head</sub> = <span class="frac"><span class="n"><i>d</i><sub>model</sub></span><span class="d"><i>H</i></span></span><span style="margin:0 1.4em"></span><span style="font-size:.8em;color:var(--faint)">en el paper: 512 / 8 = 64</span></div>
+    <p>Las cabezas se calculan, se <strong>concatenan</strong> y pasan por una proyección final <i>W</i><sub>O</sub>:</p>
+    <div class="formula"><span class="op">MultiHead</span>(<i>Q</i>,<i>K</i>,<i>V</i>) = <span class="op">Concat</span>(<span class="op">head</span><sub>1</sub>, …, <span class="op">head</span><sub>H</sub>)&#8202;<i>W</i><sup>O</sup></div>
+    <p>La intuición: distintas cabezas pueden captar distintos tipos de relación. Pero, ¿cuántas cabezas conviene? El paper hizo una <strong>ablación</strong> (misma arquitectura, variando <i>H</i>) en traducción EN-DE:</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Nº de heads</th><th>BLEU</th><th>Lectura</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td class="num">24.9</td><td class="old">una sola cabeza rinde peor</td></tr>
+          <tr><td class="num">4</td><td class="num">25.5</td><td class="old">mejora</td></tr>
+          <tr><td class="num">8 / 16</td><td class="num">25.8</td><td class="old">mejor punto observado</td></tr>
+          <tr><td class="num">32</td><td class="num">25.4</td><td class="old">demasiadas: empeora</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="key">
+      <div class="lab">La lección metodológica</div>
+      <p>Estos números <strong>no</strong> dicen “más cabezas = mejor”. Dicen que, <em>en esas condiciones</em>, hubo un punto dulce. Y ver que dos cabezas se comportan distinto <strong>no</strong> prueba que una “entienda sintaxis” y otra “semántica”. Una tendencia en una ablación no es una ley general — el corazón del estándar experimental del curso.</p>
+    </div>
+  </section>
+
+  <section id="s7">
+    <p class="kicker">Sección 7</p>
+    <h2 class="title">El bloque Transformer: residual, LayerNorm y FFN</h2>
+    <p>La atención es el corazón, pero un bloque la envuelve con tres piezas más. Tu cuaderno usa <em class="term">pre-norm</em> (normalizar <em>antes</em> de cada sub-capa), el estándar moderno:</p>
+    <div class="stack">
+      <div class="b res">entrada X</div>
+      <div class="b accent">LayerNorm → Multi-Head Attention</div>
+      <div class="plus">+ conexión residual (X + …)</div>
+      <div class="b accent">LayerNorm → Feed-Forward (FFN)</div>
+      <div class="plus">+ conexión residual</div>
+      <div class="b res">salida</div>
+    </div>
+    <div class="formula" style="font-size:1.05rem">
+      <i>Y</i> = <i>X</i> + <span class="op">MHA</span>(<span class="op">LN</span>(<i>X</i>))<span style="margin:0 1em"></span><i>Z</i> = <i>Y</i> + <span class="op">FFN</span>(<span class="op">LN</span>(<i>Y</i>))
+    </div>
+    <ul class="clean">
+      <li><strong>LayerNorm</strong> — normaliza cada vector para estabilizar el entrenamiento. Pariente del <em>feature scaling</em> / estandarización que aplicabas antes de entrenar un modelo clásico.</li>
+      <li><strong>Conexión residual</strong> (<code>x = x + sublayer(x)</code>) — deja pasar la entrada tal cual y suma solo lo que la sub-capa aporta. Los gradientes fluyen sin desvanecerse en redes profundas.</li>
+      <li><strong>FFN</strong> — un pequeño MLP por posición. En el paper era <code>max(0, xW₁+b₁)W₂+b₂</code> (ReLU); tu cuaderno usa <strong>GELU</strong>, y modelos recientes usan SwiGLU.</li>
+    </ul>
+    <div class="key">
+      <div class="lab">Reparto de trabajo — y un matiz histórico</div>
+      <p>La <strong>atención mezcla</strong> tokens (mueve información entre posiciones); la <strong>FFN transforma</strong> cada posición por separado. Y ojo: el paper de 2017 era <strong>post-norm</strong> (<code>LN(x + Sublayer(x))</code>); tu cuaderno es <strong>pre-norm</strong>. Son parientes, no idénticos: leer código moderno y asumir que reproduce el modelo de 2017 lleva a errores.</p>
+    </div>
+  </section>
+
+  <section id="s8">
+    <p class="kicker">Sección 8</p>
+    <h2 class="title">Tres familias y tres tipos de atención</h2>
+    <p>Con las mismas piezas, cambiando <em>qué puede mirar</em> la atención, salen tres arquitecturas:</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Familia</th><th>Atención</th><th>Para qué</th><th>Ejemplo</th></tr></thead>
+        <tbody>
+          <tr><td class="new">Encoder-only</td><td>bidireccional (ve todo)</td><td class="old">clasificar, extraer, <strong>análisis de sentimiento</strong>, embeddings</td><td class="code-map">BERT</td></tr>
+          <tr><td class="new">Decoder-only</td><td>causal (solo pasado)</td><td class="old">generar texto, LLMs</td><td class="code-map">GPT · Llama</td></tr>
+          <tr><td class="new">Encoder-decoder</td><td>encoder full + decoder causal + cross-attention</td><td class="old">traducir, resumir</td><td class="code-map">T5 · el paper 2017</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>El Transformer original (2017) es <strong>encoder-decoder</strong>, y en él conviven <em>tres</em> usos de la misma maquinaria de atención:</p>
+    <ul class="clean">
+      <li><strong>Self-attention en el encoder</strong> — completa: todas las posiciones de entrada se ven entre sí.</li>
+      <li><strong>Self-attention causal en el decoder</strong> — con máscara, para no ver el futuro.</li>
+      <li><strong>Cross-attention</strong> — las queries vienen del decoder, pero las keys y values del <em>encoder</em>: así el decoder “consulta” la frase de entrada mientras genera.</li>
+    </ul>
+    <div class="bridge">
+      <div class="lab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7A5 5 0 0 1 7 7h2M15 7h2a5 5 0 0 1 0 10h-2M8 12h8"/></svg>Puente con tu mundo</div>
+      <p>Tu clasificador de sentimiento, hecho hoy, sería un <strong>encoder-only</strong> (tipo BERT) afinado: no genera, <em>lee</em> toda la frase y emite una etiqueta. Tu <code>Cuaderno1</code> construye un <strong>decoder-only</strong> (<code>TinyDecoderOnlyLM</code>), porque su objetivo es <em>predecir el siguiente token</em>.</p>
+    </div>
+  </section>
+
+  <section id="s9">
+    <p class="kicker">Sección 9</p>
+    <h2 class="title">¿Por qué atención? Paralelismo, camino y coste</h2>
+    <p>Tu <em>Lectura 2</em> compara atención, recurrencia y convolución en tres ejes. Vale la pena porque explica el atractivo <em>y</em> el precio:</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Mecanismo</th><th>Complejidad</th><th>Pasos secuenciales</th><th>Camino entre 2 posiciones</th></tr></thead>
+        <tbody>
+          <tr><td class="new">Self-attention</td><td class="num">O(n²·d)</td><td class="num">O(1)</td><td class="old">directo (1 salto)</td></tr>
+          <tr><td class="new">Recurrente (RNN)</td><td class="num">O(n·d²)</td><td class="num">O(n)</td><td class="old">largo (n saltos)</td></tr>
+          <tr><td class="new">Convolucional</td><td class="num">—</td><td class="num">O(1)</td><td class="old">varias capas</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>La atención conecta cualquier par de posiciones en <strong>un solo salto</strong> y se paraleliza bien en entrenamiento. Pero fíjate en la complejidad: crece con <strong><i>n</i>²</strong> (el largo de la secuencia). Ese coste cuadrático es el precio, y es la razón de casi toda la investigación posterior en atención eficiente.</p>
+    <div class="key">
+      <div class="lab">No sobre-generalices</div>
+      <p>El paper <em>no</em> demuestra que la atención sea siempre más barata — de hecho, con secuencias largas la atención densa es cara. Demuestra una nueva relación entre paralelismo, conectividad y coste.</p>
+    </div>
+  </section>
+
+  <section id="s10">
+    <p class="kicker">Sección 10</p>
+    <h2 class="title">Del Transformer de 2017 a los modelos de hoy</h2>
+    <p>El Transformer actual <strong>no</strong> es una copia del de 2017. Tu <em>Lectura 1</em> recorre las piezas que cambiaron. Panorama a vista de pájaro (aún no hace falta dominarlas — es para que ubiques los nombres):</p>
+    <div class="cards">
+      <div class="card"><span class="tagline">Posición</span><h4>RoPE · ALiBi</h4><p>Reemplazan la PE sinusoidal. RoPE rota Q/K; ALiBi sesga los logits por distancia. Mejor extrapolación a secuencias largas.</p></div>
+      <div class="card"><span class="tagline">Normalización</span><h4>Pre-norm · RMSNorm</h4><p>Se normaliza antes de la sub-capa (pre-norm) y a menudo con RMSNorm, más simple que LayerNorm.</p></div>
+      <div class="card"><span class="tagline">Inferencia barata</span><h4>MQA · GQA</h4><p>Comparten keys/values entre cabezas para reducir el KV cache. GQA es habitual en Llama moderno.</p></div>
+      <div class="card"><span class="tagline">Velocidad</span><h4>FlashAttention</h4><p>Misma atención <em>exacta</em>, reorganizada para no materializar la matriz T×T y mover menos memoria.</p></div>
+      <div class="card"><span class="tagline">FFN</span><h4>GELU · SwiGLU</h4><p>La ReLU original dio paso a activaciones más expresivas en la red feed-forward.</p></div>
+      <div class="card"><span class="tagline">Contexto largo</span><h4>Longformer · BigBird · Reformer</h4><p>Atención dispersa (ventanas, tokens globales) o por hashing (LSH) para romper el coste cuadrático.</p></div>
+      <div class="card"><span class="tagline">Memoria</span><h4>Transformer-XL · kNN-LM</h4><p>Reusar estados previos o recuperar vecinos de un datastore externo para extender el contexto.</p></div>
+    </div>
+    <div class="key">
+      <div class="lab">Cómo leerlo</div>
+      <p><em>Attention Is All You Need</em> no es la especificación de un LLM moderno: es el <strong>fundamento</strong> del que salió todo esto. Estudiarlo es relacionar la idea con su matemática y su código, no memorizar sus hiperparámetros.</p>
+    </div>
+  </section>
+
+  <section id="s11">
+    <p class="kicker">Sección 11</p>
+    <h2 class="title">La regla del curso: medir y leer con criterio</h2>
+    <p>Esto es cultura del curso y encaja con tu formación experimental. Dos consignas:</p>
+    <h3>1 · Que corra no prueba que sea correcto</h3>
+    <p>Hay que verificar propiedades con métricas. Para la atención, el cuaderno comprueba dos <em class="term">invariantes</em> (en <code>attention_invariants</code>):</p>
+    <ul class="clean">
+      <li><strong>Normalización</strong> — cada fila debe sumar 1: <code>E_norm = max|Σⱼ Aᵢⱼ − 1| ≈ 0</code>.</li>
+      <li><strong>No fuga causal</strong> — nada del futuro: <code>L_future = max_{j&gt;i} Aᵢⱼ ≈ 0</code>.</li>
+    </ul>
+    <h3>2 · Ni una fuente primaria se lee sin criterio</h3>
+    <p>Tu <em>Lectura 2</em> lo demuestra con un detalle real: en la versión v7 del paper, el abstract dice <span style="font-variant-numeric:tabular-nums">41.8</span> BLEU (EN-FR) pero una frase de resultados mantiene <span style="font-variant-numeric:tabular-nums">41.0</span> de versiones anteriores. Lección: contrasta tablas, texto y versión. Y recuerda: <span class="hl">una matriz de atención no es una explicación completa del razonamiento del modelo.</span></p>
+    <div class="bridge">
+      <div class="lab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7A5 5 0 0 1 7 7h2M15 7h2a5 5 0 0 1 0 10h-2M8 12h8"/></svg>Puente con tu mundo</div>
+      <p>Es tu ciclo de siempre: <code>pregunta → hipótesis → baseline → modificación → métrica → resultado → análisis de error → conclusión</code>. La misma disciplina con la que evaluabas un clasificador (precisión, recall, matriz de confusión), aplicada a verificar un <em>componente</em>.</p>
+    </div>
+  </section>
+
+  <section id="s12">
+    <p class="kicker">Sección 12</p>
+    <h2 class="title">Glosario: tu vocabulario ↔ el nuevo</h2>
+    <dl class="gloss">
+      <div class="row"><dt>Token</dt><dd>Unidad mínima de texto (palabra o subpalabra). Tu “término” tras tokenizar, pensado para subword.</dd></div>
+      <div class="row"><dt>Embedding</dt><dd>Vector que representa un token. La idea de word2vec, aquí aprendida end-to-end.</dd></div>
+      <div class="row"><dt>Q / K / V</dt><dd>Query, Key, Value: desde dónde busca un token, contra qué se compara y qué información aporta.</dd></div>
+      <div class="row"><dt>Score</dt><dd>Similitud <i>QK</i><sup>⊤</sup> entre query y key. Primo del coseno entre documentos.</dd></div>
+      <div class="row"><dt>Softmax</dt><dd>Convierte scores en pesos que suman 1. El mismo de tu capa de clasificación.</dd></div>
+      <div class="row"><dt>Máscara causal</dt><dd>Suma −∞ a los scores del futuro para que el softmax los anule. Fuente de la causalidad.</dd></div>
+      <div class="row"><dt>Cabeza (head)</dt><dd>Una de las atenciones paralelas de la Multi-Head Attention.</dd></div>
+      <div class="row"><dt>Cross-attention</dt><dd>Atención donde Q viene del decoder y K, V del encoder. El puente en un encoder-decoder.</dd></div>
+      <div class="row"><dt>Residual</dt><dd>Atajo <code>x + f(x)</code> que ayuda a entrenar redes profundas.</dd></div>
+      <div class="row"><dt>LayerNorm / RMSNorm</dt><dd>Normalización por vector. Pariente del feature scaling; RMSNorm es una variante más simple.</dd></div>
+      <div class="row"><dt>Pre-norm / post-norm</dt><dd>¿La normalización va antes (moderno, tu cuaderno) o después (2017) de la sub-capa?</dd></div>
+      <div class="row"><dt>FFN</dt><dd>MLP por posición dentro del bloque. Procesa; no mezcla tokens.</dd></div>
+      <div class="row"><dt>RoPE / ALiBi</dt><dd>Formas modernas de inyectar posición: rotando Q/K, o sesgando logits por distancia.</dd></div>
+      <div class="row"><dt>MQA / GQA</dt><dd>Compartir keys/values entre cabezas para abaratar la inferencia (KV cache).</dd></div>
+      <div class="row"><dt>Decoder-only</dt><dd>Arquitectura causal para generar (GPT). La de tu <code>TinyDecoderOnlyLM</code>.</dd></div>
+    </dl>
+  </section>
+
+  <div class="end-note">
+    <h3>Ahora pregúntame</h3>
+    <p>Voy a mantener esta guía en contexto. Puedes preguntarme, por ejemplo: <em>“desarróllame el argumento de la varianza en el escalado por <span class="rad" style="border-top-width:1px"><i>d</i><sub>k</sub></span>”</em>, <em>“muéstrame el paso de <i>X</i> a <i>Q</i>/<i>K</i>/<i>V</i> con números”</em>, <em>“¿cómo se ve RoPE frente a la PE sinusoidal en el código?”</em>, <em>“conéctame la sección 5 con la celda de la máscara del Cuaderno1”</em> o <em>“¿qué exactamente demuestra y qué no el paper?”</em>. Vamos a tu ritmo.</p>
+  </div>
+
+  <footer>
+    <span class="mono">CC-0F4 · Semana 1</span> — Síntesis de Lectura 1, Lectura 2 y Cuaderno 1, para quien llega desde ML y NLP clásico.
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var KEY = 'cc0f4-guia-theme';
+    var sun = '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>';
+    var moon = '<path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path>';
+    var icon = document.getElementById('themeIcon'), txt = document.getElementById('themeText');
+    function dark() { var c = root.getAttribute('data-theme'); if (c === 'dark') return true; if (c === 'light') return false;
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; }
+    function paint() { var d = dark(); icon.innerHTML = d ? sun : moon; txt.textContent = d ? 'Claro' : 'Oscuro'; }
+    try { var s = localStorage.getItem(KEY); if (s === 'dark' || s === 'light') root.setAttribute('data-theme', s); } catch (e) {}
+    paint();
+    document.getElementById('themeToggle').addEventListener('click', function () {
+      var n = dark() ? 'light' : 'dark'; root.setAttribute('data-theme', n);
+      try { localStorage.setItem(KEY, n); } catch (e) {} paint();
+    });
+  })();
+</script>
