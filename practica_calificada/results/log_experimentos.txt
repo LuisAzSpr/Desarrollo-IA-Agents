@@ -1,0 +1,171 @@
+﻿[exp1_prompt 001/020] P0           C01 seed=42 -> alto   (valido_correcto) 21.8s
+[exp1_prompt 002/020] P0           C02 seed=42 -> alto   (valido_correcto) 21.8s
+[exp1_prompt 003/020] P0           C03 seed=42 -> None   (json_invalido) 37.2s
+[exp1_prompt 004/020] P0           C04 seed=42 -> alto   (schema_invalido) 18.3s
+[exp1_prompt 005/020] P0           C05 seed=42 -> alto   (schema_invalido) 23.2s
+[exp1_prompt 006/020] P0           C06 seed=42 -> alto   (valido_incorrecto) 21.5s
+[exp1_prompt 007/020] P0           C07 seed=42 -> alto   (valido_incorrecto) 15.4s
+[exp1_prompt 008/020] P0           C08 seed=42 -> alto   (valido_incorrecto) 16.6s
+[exp1_prompt 009/020] P0           C09 seed=42 -> alto   (schema_invalido) 14.5s
+[exp1_prompt 010/020] P0           C10 seed=42 -> alto   (schema_invalido) 22.5s
+[exp1_prompt 011/020] P1           C01 seed=42 -> medio  (valido_incorrecto) 21.1s
+[exp1_prompt 012/020] P1           C02 seed=42 -> medio  (valido_incorrecto) 20.6s
+[exp1_prompt 013/020] P1           C03 seed=42 -> medio  (valido_incorrecto) 19.8s
+[exp1_prompt 014/020] P1           C04 seed=42 -> None   (json_invalido) 36.4s
+[exp1_prompt 015/020] P1           C05 seed=42 -> medio  (valido_correcto) 18.6s
+[exp1_prompt 016/020] P1           C06 seed=42 -> medio  (valido_correcto) 28.0s
+[exp1_prompt 017/020] P1           C07 seed=42 -> medio  (valido_correcto) 27.8s
+[exp1_prompt 018/020] P1           C08 seed=42 -> medio  (valido_incorrecto) 22.1s
+[exp1_prompt 019/020] P1           C09 seed=42 -> medio  (valido_incorrecto) 21.8s
+[exp1_prompt 020/020] P1           C10 seed=42 -> medio  (valido_incorrecto) 17.7s
+[exp2_contexto 001/020] C0           C01 seed=42 -> medio  (valido_incorrecto) 21.1s
+[exp2_contexto 002/020] C0           C02 seed=42 -> medio  (valido_incorrecto) 20.6s
+[exp2_contexto 003/020] C0           C03 seed=42 -> medio  (valido_incorrecto) 19.8s
+[exp2_contexto 004/020] C0           C04 seed=42 -> None   (json_invalido) 36.4s
+[exp2_contexto 005/020] C0           C05 seed=42 -> medio  (valido_correcto) 18.6s
+[exp2_contexto 006/020] C0           C06 seed=42 -> medio  (valido_correcto) 28.0s
+[exp2_contexto 007/020] C0           C07 seed=42 -> medio  (valido_correcto) 27.8s
+[exp2_contexto 008/020] C0           C08 seed=42 -> medio  (valido_incorrecto) 22.1s
+[exp2_contexto 009/020] C0           C09 seed=42 -> medio  (valido_incorrecto) 21.8s
+[exp2_contexto 010/020] C0           C10 seed=42 -> medio  (valido_incorrecto) 17.7s
+[exp2_contexto 011/020] C1           C01 seed=42 -> medio  (valido_incorrecto) 20.2s
+[exp2_contexto 012/020] C1           C02 seed=42 -> medio  (valido_incorrecto) 22.3s
+[exp2_contexto 013/020] C1           C03 seed=42 -> medio  (valido_incorrecto) 21.2s
+[exp2_contexto 014/020] C1           C04 seed=42 -> medio  (schema_invalido) 31.7s
+[exp2_contexto 015/020] C1           C05 seed=42 -> medio  (schema_invalido) 30.9s
+[exp2_contexto 016/020] C1           C06 seed=42 -> medio  (valido_correcto) 22.1s
+[exp2_contexto 017/020] C1           C07 seed=42 -> medio  (valido_correcto) 21.7s
+[exp2_contexto 018/020] C1           C08 seed=42 -> medio  (valido_incorrecto) 13.6s
+[exp2_contexto 019/020] C1           C09 seed=42 -> medio  (valido_incorrecto) 13.8s
+[exp2_contexto 020/020] C1           C10 seed=42 -> medio  (valido_incorrecto) 18.8s
+[exp3_decoding 001/070] D0_greedy    C01 seed=42 -> medio  (valido_incorrecto) 21.1s
+[exp3_decoding 002/070] D0_greedy    C01 seed=43 -> medio  (valido_incorrecto) 21.2s
+[exp3_decoding 003/070] D0_greedy    C02 seed=42 -> medio  (valido_incorrecto) 20.6s
+[exp3_decoding 004/070] D0_greedy    C02 seed=43 -> medio  (valido_incorrecto) 22.2s
+[exp3_decoding 005/070] D0_greedy    C03 seed=42 -> medio  (valido_incorrecto) 19.8s
+[exp3_decoding 006/070] D0_greedy    C03 seed=43 -> medio  (valido_incorrecto) 18.1s
+[exp3_decoding 007/070] D0_greedy    C04 seed=42 -> None   (json_invalido) 36.4s
+[exp3_decoding 008/070] D0_greedy    C04 seed=43 -> None   (json_invalido) 34.4s
+[exp3_decoding 009/070] D0_greedy    C05 seed=42 -> medio  (valido_correcto) 18.6s
+[exp3_decoding 010/070] D0_greedy    C05 seed=43 -> medio  (valido_correcto) 17.5s
+[exp3_decoding 011/070] D0_greedy    C06 seed=42 -> medio  (valido_correcto) 28.0s
+[exp3_decoding 012/070] D0_greedy    C06 seed=43 -> medio  (valido_correcto) 23.5s
+[exp3_decoding 013/070] D0_greedy    C07 seed=42 -> medio  (valido_correcto) 27.8s
+[exp3_decoding 014/070] D0_greedy    C07 seed=43 -> medio  (valido_correcto) 23.4s
+[exp3_decoding 015/070] D0_greedy    C08 seed=42 -> medio  (valido_incorrecto) 22.1s
+[exp3_decoding 016/070] D0_greedy    C08 seed=43 -> medio  (valido_incorrecto) 18.5s
+[exp3_decoding 017/070] D0_greedy    C09 seed=42 -> medio  (valido_incorrecto) 21.8s
+[exp3_decoding 018/070] D0_greedy    C09 seed=43 -> medio  (valido_incorrecto) 20.0s
+[exp3_decoding 019/070] D0_greedy    C10 seed=42 -> medio  (valido_incorrecto) 17.7s
+[exp3_decoding 020/070] D0_greedy    C10 seed=43 -> medio  (valido_incorrecto) 18.2s
+[exp3_decoding 021/070] D1_sampling  C01 seed=0 -> medio|ninguna (schema_invalido) 27.6s
+[exp3_decoding 022/070] D1_sampling  C01 seed=1 -> medio  (valido_incorrecto) 32.9s
+[exp3_decoding 023/070] D1_sampling  C01 seed=2 -> bajo   (valido_incorrecto) 15.7s
+[exp3_decoding 024/070] D1_sampling  C01 seed=3 -> alto|medio|ninguna (schema_invalido) 26.4s
+[exp3_decoding 025/070] D1_sampling  C01 seed=4 -> bajo|medio|ninguna (schema_invalido) 18.9s
+[exp3_decoding 026/070] D1_sampling  C02 seed=0 -> medio|ninguna (schema_invalido) 27.6s
+[exp3_decoding 027/070] D1_sampling  C02 seed=1 -> medio  (valido_incorrecto) 24.3s
+[exp3_decoding 028/070] D1_sampling  C02 seed=2 -> medio|ninguna|ninguna|0 (schema_invalido) 21.7s
+[exp3_decoding 029/070] D1_sampling  C02 seed=3 -> alto|medio|ninguna (schema_invalido) 36.0s
+[exp3_decoding 030/070] D1_sampling  C02 seed=4 -> medio|ninguna (schema_invalido) 27.3s
+[exp3_decoding 031/070] D1_sampling  C03 seed=0 -> medio|ninguna (schema_invalido) 30.2s
+[exp3_decoding 032/070] D1_sampling  C03 seed=1 -> medio  (schema_invalido) 23.0s
+[exp3_decoding 033/070] D1_sampling  C03 seed=2 -> bajo   (valido_incorrecto) 15.6s
+[exp3_decoding 034/070] D1_sampling  C03 seed=3 -> alto|medio|ninguna (schema_invalido) 28.6s
+[exp3_decoding 035/070] D1_sampling  C03 seed=4 -> bajo|medio|medio|medio (schema_invalido) 24.2s
+[exp3_decoding 036/070] D1_sampling  C04 seed=0 -> medio|ninguna (schema_invalido) 21.1s
+[exp3_decoding 037/070] D1_sampling  C04 seed=1 -> medio  (valido_correcto) 23.5s
+[exp3_decoding 038/070] D1_sampling  C04 seed=2 -> bajo   (valido_incorrecto) 15.2s
+[exp3_decoding 039/070] D1_sampling  C04 seed=3 -> alto|medio|ninguna (schema_invalido) 27.2s
+[exp3_decoding 040/070] D1_sampling  C04 seed=4 -> medio|ninguna (schema_invalido) 27.8s
+[exp3_decoding 041/070] D1_sampling  C05 seed=0 -> medio|ninguna (schema_invalido) 21.6s
+[exp3_decoding 042/070] D1_sampling  C05 seed=1 -> medio  (schema_invalido) 22.1s
+[exp3_decoding 043/070] D1_sampling  C05 seed=2 -> medio  (valido_correcto) 15.7s
+[exp3_decoding 044/070] D1_sampling  C05 seed=3 -> alto|medio|ninguna (schema_invalido) 23.0s
+[exp3_decoding 045/070] D1_sampling  C05 seed=4 -> None   (json_invalido) 27.8s
+[exp3_decoding 046/070] D1_sampling  C06 seed=0 -> medio|ninguna (schema_invalido) 21.1s
+[exp3_decoding 047/070] D1_sampling  C06 seed=1 -> medio  (valido_correcto) 21.9s
+[exp3_decoding 048/070] D1_sampling  C06 seed=2 -> bajo   (valido_incorrecto) 15.7s
+[exp3_decoding 049/070] D1_sampling  C06 seed=3 -> alto|medio|ninguna (schema_invalido) 25.2s
+[exp3_decoding 050/070] D1_sampling  C06 seed=4 -> medio|ninguna (schema_invalido) 28.1s
+[exp3_decoding 051/070] D1_sampling  C07 seed=0 -> medio|ninguna (schema_invalido) 28.5s
+[exp3_decoding 052/070] D1_sampling  C07 seed=1 -> medio  (schema_invalido) 22.9s
+[exp3_decoding 053/070] D1_sampling  C07 seed=2 -> bajo   (valido_incorrecto) 15.3s
+[exp3_decoding 054/070] D1_sampling  C07 seed=3 -> alto|medio|ninguna (schema_invalido) 27.0s
+[exp3_decoding 055/070] D1_sampling  C07 seed=4 -> bajo|medio|ninguna (schema_invalido) 19.4s
+[exp3_decoding 056/070] D1_sampling  C08 seed=0 -> medio|ninguna (schema_invalido) 23.3s
+[exp3_decoding 057/070] D1_sampling  C08 seed=1 -> medio  (schema_invalido) 23.5s
+[exp3_decoding 058/070] D1_sampling  C08 seed=2 -> bajo   (valido_correcto) 15.9s
+[exp3_decoding 059/070] D1_sampling  C08 seed=3 -> alto|medio|ninguna (schema_invalido) 24.5s
+[exp3_decoding 060/070] D1_sampling  C08 seed=4 -> bajo|medio|medio|medio (schema_invalido) 24.5s
+[exp3_decoding 061/070] D1_sampling  C09 seed=0 -> medio|ninguna (schema_invalido) 26.6s
+[exp3_decoding 062/070] D1_sampling  C09 seed=1 -> medio  (schema_invalido) 23.0s
+[exp3_decoding 063/070] D1_sampling  C09 seed=2 -> bajo   (valido_correcto) 15.8s
+[exp3_decoding 064/070] D1_sampling  C09 seed=3 -> alto|medio|ninguna (schema_invalido) 23.0s
+[exp3_decoding 065/070] D1_sampling  C09 seed=4 -> bajo|medio|medio|medio (schema_invalido) 22.3s
+[exp3_decoding 066/070] D1_sampling  C10 seed=0 -> medio|ninguna (schema_invalido) 26.3s
+[exp3_decoding 067/070] D1_sampling  C10 seed=1 -> medio  (schema_invalido) 22.6s
+[exp3_decoding 068/070] D1_sampling  C10 seed=2 -> bajo   (valido_correcto) 15.4s
+[exp3_decoding 069/070] D1_sampling  C10 seed=3 -> alto|medio|ninguna (schema_invalido) 37.6s
+[exp3_decoding 070/070] D1_sampling  C10 seed=4 -> bajo|medio|medio|medio (schema_invalido) 19.8s
+[exp4_fewshot 001/020] F0_zeroshot  C01 seed=42 -> medio  (valido_incorrecto) 21.1s
+[exp4_fewshot 002/020] F0_zeroshot  C02 seed=42 -> medio  (valido_incorrecto) 20.6s
+[exp4_fewshot 003/020] F0_zeroshot  C03 seed=42 -> medio  (valido_incorrecto) 19.8s
+[exp4_fewshot 004/020] F0_zeroshot  C04 seed=42 -> None   (json_invalido) 36.4s
+[exp4_fewshot 005/020] F0_zeroshot  C05 seed=42 -> medio  (valido_correcto) 18.6s
+[exp4_fewshot 006/020] F0_zeroshot  C06 seed=42 -> medio  (valido_correcto) 28.0s
+[exp4_fewshot 007/020] F0_zeroshot  C07 seed=42 -> medio  (valido_correcto) 27.8s
+[exp4_fewshot 008/020] F0_zeroshot  C08 seed=42 -> medio  (valido_incorrecto) 22.1s
+[exp4_fewshot 009/020] F0_zeroshot  C09 seed=42 -> medio  (valido_incorrecto) 21.8s
+[exp4_fewshot 010/020] F0_zeroshot  C10 seed=42 -> medio  (valido_incorrecto) 17.7s
+[exp4_fewshot 011/020] F1_fewshot   C01 seed=42 -> medio  (valido_incorrecto) 17.5s
+[exp4_fewshot 012/020] F1_fewshot   C02 seed=42 -> medio  (valido_incorrecto) 17.1s
+[exp4_fewshot 013/020] F1_fewshot   C03 seed=42 -> medio  (valido_incorrecto) 17.2s
+[exp4_fewshot 014/020] F1_fewshot   C04 seed=42 -> medio  (valido_correcto) 17.5s
+[exp4_fewshot 015/020] F1_fewshot   C05 seed=42 -> medio  (valido_correcto) 17.3s
+[exp4_fewshot 016/020] F1_fewshot   C06 seed=42 -> medio  (valido_correcto) 17.6s
+[exp4_fewshot 017/020] F1_fewshot   C07 seed=42 -> medio  (valido_correcto) 18.3s
+[exp4_fewshot 018/020] F1_fewshot   C08 seed=42 -> medio  (valido_incorrecto) 20.2s
+[exp4_fewshot 019/020] F1_fewshot   C09 seed=42 -> medio  (valido_incorrecto) 19.0s
+[exp4_fewshot 020/020] F1_fewshot   C10 seed=42 -> medio  (valido_incorrecto) 18.7s
+[sondeo] P0/C0 C01 alto=0.83 medio=0.09 bajo=0.07
+[sondeo] P0/C0 C02 alto=0.79 medio=0.11 bajo=0.10
+[sondeo] P0/C0 C03 alto=0.91 medio=0.05 bajo=0.04
+[sondeo] P0/C0 C04 alto=0.87 medio=0.08 bajo=0.05
+[sondeo] P0/C0 C05 alto=0.87 medio=0.07 bajo=0.05
+[sondeo] P0/C0 C06 alto=0.83 medio=0.08 bajo=0.09
+[sondeo] P0/C0 C07 alto=0.86 medio=0.08 bajo=0.06
+[sondeo] P0/C0 C08 alto=0.93 medio=0.04 bajo=0.03
+[sondeo] P0/C0 C09 alto=0.91 medio=0.04 bajo=0.05
+[sondeo] P0/C0 C10 alto=0.89 medio=0.05 bajo=0.06
+[sondeo] P1/C0 C01 alto=0.28 medio=0.61 bajo=0.11
+[sondeo] P1/C0 C02 alto=0.22 medio=0.67 bajo=0.11
+[sondeo] P1/C0 C03 alto=0.28 medio=0.63 bajo=0.09
+[sondeo] P1/C0 C04 alto=0.21 medio=0.71 bajo=0.09
+[sondeo] P1/C0 C05 alto=0.16 medio=0.76 bajo=0.08
+[sondeo] P1/C0 C06 alto=0.23 medio=0.68 bajo=0.09
+[sondeo] P1/C0 C07 alto=0.27 medio=0.62 bajo=0.10
+[sondeo] P1/C0 C08 alto=0.36 medio=0.54 bajo=0.10
+[sondeo] P1/C0 C09 alto=0.29 medio=0.61 bajo=0.10
+[sondeo] P1/C0 C10 alto=0.20 medio=0.67 bajo=0.13
+[sondeo] P1/C1 C01 alto=0.26 medio=0.65 bajo=0.09
+[sondeo] P1/C1 C02 alto=0.24 medio=0.66 bajo=0.10
+[sondeo] P1/C1 C03 alto=0.20 medio=0.71 bajo=0.09
+[sondeo] P1/C1 C04 alto=0.20 medio=0.75 bajo=0.06
+[sondeo] P1/C1 C05 alto=0.20 medio=0.73 bajo=0.07
+[sondeo] P1/C1 C06 alto=0.29 medio=0.64 bajo=0.07
+[sondeo] P1/C1 C07 alto=0.23 medio=0.68 bajo=0.09
+[sondeo] P1/C1 C08 alto=0.37 medio=0.54 bajo=0.09
+[sondeo] P1/C1 C09 alto=0.36 medio=0.55 bajo=0.09
+[sondeo] P1/C1 C10 alto=0.18 medio=0.72 bajo=0.11
+[sondeo] F1/C0 C01 alto=0.35 medio=0.57 bajo=0.08
+[sondeo] F1/C0 C02 alto=0.36 medio=0.55 bajo=0.09
+[sondeo] F1/C0 C03 alto=0.35 medio=0.57 bajo=0.07
+[sondeo] F1/C0 C04 alto=0.30 medio=0.61 bajo=0.10
+[sondeo] F1/C0 C05 alto=0.28 medio=0.64 bajo=0.08
+[sondeo] F1/C0 C06 alto=0.28 medio=0.62 bajo=0.09
+[sondeo] F1/C0 C07 alto=0.35 medio=0.55 bajo=0.09
+[sondeo] F1/C0 C08 alto=0.37 medio=0.55 bajo=0.08
+[sondeo] F1/C0 C09 alto=0.34 medio=0.58 bajo=0.07
+[sondeo] F1/C0 C10 alto=0.28 medio=0.62 bajo=0.11
+[kv] con cache 8035 ms | sin cache 75819 ms | x9.44 | mismo texto: True

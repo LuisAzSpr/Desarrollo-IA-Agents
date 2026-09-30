@@ -1,0 +1,123 @@
+{
+  "ocid": "ocds-dgv273-seacev3-1183834",
+  "entidad": "MUNICIPALIDAD DISTRITAL DE RONDOS",
+  "entidad_id": "PE-CONSUCODE-1011",
+  "procedimiento": "Licitación Pública Abreviada",
+  "nomenclatura": "LP-ABR-5-2025-MDR/CS-1",
+  "categoria": "goods",
+  "objeto": "CONTRATACION PARA LA ADQUISICIÓN DE PRODUCTOS PARA EL PROGRAMA VASO DE LECHE DE LA MUNICIPALIDAD DISTRITAL DE RONDOS ¿ PERIODO 2026",
+  "fecha_convocatoria": "2025-12-31T16:40:00-05:00",
+  "valor_referencial_pen": 205154.0,
+  "n_postores_ocds": 1.0,
+  "bases_y_documentos": [
+    {
+      "title": "Bases Administrativas",
+      "documentType": "biddingDocuments",
+      "format": "pdf",
+      "datePublished": "2025-12-31T16:40:00-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=c4316f76-cdce-4f6c-aead-f890b2dabfb2"
+    },
+    {
+      "title": "Bases Integradas",
+      "documentType": "biddingDocuments",
+      "format": "pdf",
+      "datePublished": "2026-01-08T16:14:01-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=f79e144d-e426-4187-af23-de322c3a48c6"
+    },
+    {
+      "title": "Acta de no formulación de consultas y observaciones",
+      "documentType": "clarifications",
+      "format": "pdf",
+      "datePublished": "2026-01-08T15:43:52-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=dc30c25c-c457-41f5-9572-b9cb54bb5b5b"
+    },
+    {
+      "title": "Documentos de Presentación de Propuestas",
+      "documentType": "biddingDocuments",
+      "format": "zip",
+      "datePublished": "2026-01-21T12:51:56-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=f4c896d8-0065-4e03-bb83-4a8788cfff9c"
+    },
+    {
+      "title": "Documentos de Calificación y Evaluación",
+      "documentType": "evaluationReports",
+      "format": "zip",
+      "datePublished": "2026-01-21T12:51:57-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=55bf3ae7-709c-4f8a-985d-7b537309ae39"
+    },
+    {
+      "title": "Documentos de Otorgamiento de Buena Pro",
+      "documentType": "awardNotice",
+      "format": "zip",
+      "datePublished": "2026-01-21T12:51:58-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=5478538e-91fb-49d1-91c4-8c0b183e4bfa"
+    }
+  ],
+  "items": [
+    {
+      "id": 21192182,
+      "description": "ADQUISICION DE HOJUELA DE AVENA, QUINUA Y KIWICHA PRECOCIDA ENRIQUECIDA CON VITAMINAS Y MINERALES PARA EL PROGRAMA VASO DE LECHE 2026",
+      "quantity": 13923.74,
+      "unit_name": "Kilogramo",
+      "totalValue_amount": 100250.0,
+      "totalValue_currency": "PEN",
+      "classification_description": "HOJUELA DE AVENA, QUINUA Y KIWICHA PRECOCIDA ENRIQUECIDA CON VITAMINAS Y MINERALES",
+      "statusDetails": "CONTRATADO"
+    },
+    {
+      "id": 21192181,
+      "description": "ADQUISICION DE LECHE EVAPORADA ENTERA X 410 GRAMOS PARA EL PROGRAMA VADO DE LECHE 2026",
+      "quantity": 22320.0,
+      "unit_name": "Unidad",
+      "totalValue_amount": 104904.0,
+      "totalValue_currency": "PEN",
+      "classification_description": "LECHE EVAPORADA ENTERA X 400 g  APROX.",
+      "statusDetails": "CONTRATADO"
+    }
+  ],
+  "postores": [
+    {
+      "id": "PE-RUC-20550700329",
+      "name": "INVERSIONES LECHE MASS S.A.C."
+    }
+  ],
+  "adjudicaciones": [
+    {
+      "id_award": "1183834-20550700329",
+      "date": "2026-01-21T00:00:00-05:00",
+      "value_amount": 205154.0,
+      "value_currency": "PEN",
+      "awards_id": "1183834-20550700329",
+      "id_proveedor": "PE-RUC-20550700329",
+      "name": "INVERSIONES LECHE MASS S.A.C."
+    }
+  ],
+  "items_adjudicados": [
+    {
+      "awards_id": "1183834-20550700329",
+      "description": "ADQUISICION DE LECHE EVAPORADA ENTERA X 410 GRAMOS PARA EL PROGRAMA VADO DE LECHE 2026",
+      "quantity": 22320.0,
+      "totalValue_amount": 104904.0,
+      "totalValue_currency": "PEN",
+      "statusDetails": "CONTRATADO"
+    },
+    {
+      "awards_id": "1183834-20550700329",
+      "description": "ADQUISICION DE HOJUELA DE AVENA, QUINUA Y KIWICHA PRECOCIDA ENRIQUECIDA CON VITAMINAS Y MINERALES PARA EL PROGRAMA VASO DE LECHE 2026",
+      "quantity": 13923.74,
+      "totalValue_amount": 100250.0,
+      "totalValue_currency": "PEN",
+      "statusDetails": "CONTRATADO"
+    }
+  ],
+  "contratos": [
+    {
+      "id": 2375573,
+      "awardID": "1183834-20550700329",
+      "dateSigned": "2026-01-29T00:00:00-05:00",
+      "value_amount": 205154.0,
+      "value_currency": "PEN",
+      "statusDetails": NaN
+    }
+  ]
+}

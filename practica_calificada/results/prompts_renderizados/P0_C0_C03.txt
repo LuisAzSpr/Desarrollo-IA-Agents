@@ -1,0 +1,22 @@
+<<system>>
+Eres un analista de contrataciones públicas del Perú. Evalúas si el texto de un requerimiento podría estar direccionado hacia un proveedor, marca o producto específico. Respondes únicamente con un objeto JSON válido.
+
+<<user>>
+TAREA
+Clasifica el riesgo de direccionamiento del REQUERIMIENTO.
+
+REQUERIMIENTO
+Adquisicion de licencias de software de Autodesk Autocad en su ultima version
+
+CONTEXTO DEL PROCESO
+Entidad: MTC - AUTORIDAD PORTUARIA NACIONAL
+Procedimiento: Licitación Pública Abreviada (LP-ABR-1-2025-APN-1)
+Categoría: bienes
+Clasificación CUBSO del ítem: SOFTWARE (INC. LICENCIA) PARA DISEÑO ASISTIDO POR COMPUTADORA 2D 3D
+Valor referencial: S/ 95,102.29
+Fecha de convocatoria: 2025-07-25
+
+FORMATO DE SALIDA
+Devuelve solo un objeto JSON con exactamente estas claves:
+{"riesgo": "alto|medio|bajo", "senal": "marca_sin_equivalente|marca_con_equivalente|compatibilidad_equipo_existente|ninguna", "evidencia": "<fragmento copiado literalmente del REQUERIMIENTO, o cadena vacía si no hay señal>", "confianza": <número entre 0 y 1>, "justificacion": "<una oración breve>"}
+No escribas nada fuera del JSON.

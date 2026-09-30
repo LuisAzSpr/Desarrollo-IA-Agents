@@ -1,0 +1,112 @@
+{
+  "ocid": "ocds-dgv273-seacev3-1152458",
+  "entidad": "BANCO CENTRAL DE RESERVA DEL PERÚ",
+  "entidad_id": "PE-CONSUCODE-1926",
+  "procedimiento": "Licitación Pública Abreviada",
+  "nomenclatura": "LP-ABR-9-2025-BCRPLIM-1",
+  "categoria": "goods",
+  "objeto": "Adquisición de 150 Kg de flejes de plata con ley de fineza 0,925",
+  "fecha_convocatoria": "2025-09-19T13:37:00-05:00",
+  "valor_referencial_pen": 728598.4,
+  "n_postores_ocds": 1.0,
+  "bases_y_documentos": [
+    {
+      "title": "Bases Administrativas",
+      "documentType": "biddingDocuments",
+      "format": "pdf",
+      "datePublished": "2025-09-19T13:37:00-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=649124f3-1c8e-4397-9642-7e0b1b2ebdb5"
+    },
+    {
+      "title": "Informe que sustenta la declaratoria de Desierto",
+      "documentType": "evaluationReports",
+      "format": "pdf",
+      "datePublished": "2025-09-19T13:37:00-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=311f2775-f7e9-48b3-b155-7f41792b0422"
+    },
+    {
+      "title": "Acta de no formulación de consultas y observaciones",
+      "documentType": "clarifications",
+      "format": "pdf",
+      "datePublished": "2025-09-26T11:40:26-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=05cb893c-4fa6-4565-a9d2-d240234816df"
+    },
+    {
+      "title": "Bases Integradas",
+      "documentType": "biddingDocuments",
+      "format": "pdf",
+      "datePublished": "2025-09-29T17:12:00-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=cc65bf33-91b6-4915-a4fa-8377863a911e"
+    },
+    {
+      "title": "Documentos de Presentación de Propuestas",
+      "documentType": "biddingDocuments",
+      "format": "zip",
+      "datePublished": "2025-10-06T16:10:11-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=127cb1cb-df2b-45a1-b80a-f2bf1f0f856b"
+    },
+    {
+      "title": "Documentos de Calificación y Evaluación",
+      "documentType": "evaluationReports",
+      "format": "zip",
+      "datePublished": "2025-10-06T16:10:11-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=8067c280-7a5a-4827-862a-0a3ffc2b8fdc"
+    },
+    {
+      "title": "Documentos de Otorgamiento de Buena Pro",
+      "documentType": "awardNotice",
+      "format": "zip",
+      "datePublished": "2025-10-06T16:10:11-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=4be7534d-90b7-4569-aabb-edffba5db0dd"
+    }
+  ],
+  "items": [
+    {
+      "id": 21096472,
+      "description": "Adquisición de 150 Kg de flejes de plata con ley de fineza 0,925",
+      "quantity": 150.0,
+      "unit_name": "Kilogramo",
+      "totalValue_amount": 199616.0,
+      "totalValue_currency": "USD",
+      "classification_description": "BARRA DE PLATA",
+      "statusDetails": "CONTRATADO"
+    }
+  ],
+  "postores": [
+    {
+      "id": "PE-RUC-20520818821",
+      "name": "ECOSERVICIOS E INGENIERIA LIMPIA SOCIEDAD ANONIMA CERRADA - EIL S.A.C."
+    }
+  ],
+  "adjudicaciones": [
+    {
+      "id_award": "1152458-20520818821",
+      "date": "2025-10-06T00:00:00-05:00",
+      "value_amount": 199615.76,
+      "value_currency": "USD",
+      "awards_id": "1152458-20520818821",
+      "id_proveedor": "PE-RUC-20520818821",
+      "name": "ECOSERVICIOS E INGENIERIA LIMPIA SOCIEDAD ANONIMA CERRADA - EIL S.A.C."
+    }
+  ],
+  "items_adjudicados": [
+    {
+      "awards_id": "1152458-20520818821",
+      "description": "Adquisición de 150 Kg de flejes de plata con ley de fineza 0,925",
+      "quantity": 150.0,
+      "totalValue_amount": 199615.76,
+      "totalValue_currency": "USD",
+      "statusDetails": "CONTRATADO"
+    }
+  ],
+  "contratos": [
+    {
+      "id": 2356490,
+      "awardID": "1152458-20520818821",
+      "dateSigned": "2025-10-23T00:00:00-05:00",
+      "value_amount": 199615.76,
+      "value_currency": "USD",
+      "statusDetails": NaN
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "salida_requisito.schema.json",
+  "title": "Riesgo de direccionamiento de un requerimiento (PC1 CC0F4)",
+  "description": "Contrato de salida del LLM. La validez estructural no implica corrección: la coherencia senal->riesgo, la literalidad de la evidencia y la etiqueta correcta se verifican aparte (src/validacion.py).",
+  "type": "object",
+  "properties": {
+    "riesgo": {
+      "type": "string",
+      "enum": ["alto", "medio", "bajo"]
+    },
+    "senal": {
+      "type": "string",
+      "enum": ["marca_sin_equivalente", "marca_con_equivalente", "compatibilidad_equipo_existente", "ninguna"]
+    },
+    "evidencia": {
+      "type": "string",
+      "maxLength": 300
+    },
+    "confianza": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "justificacion": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 400
+    }
+  },
+  "required": ["riesgo", "senal", "evidencia", "confianza", "justificacion"],
+  "additionalProperties": false
+}

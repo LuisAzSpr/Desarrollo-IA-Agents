@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+# CSV OCDS crudos (~1.4 GB): no se versionan, ver data/README.md
+*.zip
+claudego/
+# Salidas efímeras de la demo y de la QA de diapositivas
+results/demo/
+slides/_png/

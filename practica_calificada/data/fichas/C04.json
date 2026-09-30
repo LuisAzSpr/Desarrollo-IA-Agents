@@ -1,0 +1,165 @@
+{
+  "ocid": "ocds-dgv273-seacev3-1179832",
+  "entidad": "FONDO NACIONAL DE DESARROLLO PESQUERO",
+  "entidad_id": "PE-CONSUCODE-1915",
+  "procedimiento": "Concurso Público Abreviado",
+  "nomenclatura": "CP-ABR-12-2025-FONDEPES-1",
+  "categoria": "services",
+  "objeto": "Contratación del Servicio de Suscripción de Licencias de Software de Colaboración y Mensajería Electrónica en la Nube Microsoft Office 365 o equivalente para el FONDEPES",
+  "fecha_convocatoria": "2025-12-18T18:24:00-05:00",
+  "valor_referencial_pen": 291338.54,
+  "n_postores_ocds": 16.0,
+  "bases_y_documentos": [
+    {
+      "title": "Bases Administrativas",
+      "documentType": "biddingDocuments",
+      "format": "pdf",
+      "datePublished": "2025-12-18T18:24:00-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=1906054e-fbaa-45ae-ba5d-8bed7520a09b"
+    },
+    {
+      "title": "Pliego de absolución de consultas y observaciones",
+      "documentType": "clarifications",
+      "format": "pdf",
+      "datePublished": "2026-01-12T20:02:42-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=18587e71-9cf1-4dd8-90d7-829513f1140d"
+    },
+    {
+      "title": "Bases Integradas",
+      "documentType": "biddingDocuments",
+      "format": "pdf",
+      "datePublished": "2026-01-12T20:02:43-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=86289a42-9808-4a1d-bf08-605f8e4f5c6d"
+    },
+    {
+      "title": "Documentos de Presentación de Propuestas",
+      "documentType": "biddingDocuments",
+      "format": "zip",
+      "datePublished": "2026-01-29T22:13:15-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=6a44e676-4a21-4e56-82eb-93d9d25c8f37"
+    },
+    {
+      "title": "Documentos de Calificación y Evaluación",
+      "documentType": "evaluationReports",
+      "format": "zip",
+      "datePublished": "2026-01-29T22:13:15-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=6d9da014-4523-48c3-9189-1371cfc90c6d"
+    },
+    {
+      "title": "Documentos de Otorgamiento de Buena Pro",
+      "documentType": "awardNotice",
+      "format": "zip",
+      "datePublished": "2026-01-29T22:13:15-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=931d2bff-a63b-44fb-b72d-37a6e9da3855"
+    }
+  ],
+  "items": [
+    {
+      "id": 21181173,
+      "description": "Contratación del Servicio de Suscripción de Licencias de Software de Colaboración y Mensajería Electrónica en la Nube Microsoft Office 365 o equivalente para el FONDEPES",
+      "quantity": 1.0,
+      "unit_name": "Servicio",
+      "totalValue_amount": 291338.54,
+      "totalValue_currency": "PEN",
+      "classification_description": "SERVICIO DE CORREO ELECTRONICO Y HERRAMIENTAS DE COLABORACION EN LA NUBE",
+      "statusDetails": "CONTRATADO"
+    }
+  ],
+  "postores": [
+    {
+      "id": "PE-RUC-1760352",
+      "name": "CONSORCIO AMERICATEL PERU S.A. Y ENTEL PERU S.A."
+    },
+    {
+      "id": "PE-RUC-20613408291",
+      "name": "NUBEO S.A.C."
+    },
+    {
+      "id": "PE-RUC-20612274607",
+      "name": "CE GROUP E.I.R.L."
+    },
+    {
+      "id": "PE-RUC-20612198731",
+      "name": "S4E LATAM S.A.C."
+    },
+    {
+      "id": "PE-RUC-20608895176",
+      "name": "REDINET PERU S.A.C."
+    },
+    {
+      "id": "PE-RUC-20607821608",
+      "name": "BGS PERU CO. LTD. E.I.R.L."
+    },
+    {
+      "id": "PE-RUC-20606363100",
+      "name": "GRUPO PURA SANGRE S.A.C."
+    },
+    {
+      "id": "PE-RUC-20600236068",
+      "name": "ZEIT PERU S.A.C."
+    },
+    {
+      "id": "PE-RUC-20563707144",
+      "name": "INDEX NET S.A.C."
+    },
+    {
+      "id": "PE-RUC-20559079864",
+      "name": "GRUPO BSCIT S.A.C."
+    },
+    {
+      "id": "PE-RUC-20521435357",
+      "name": "XENTIC S.A.C."
+    },
+    {
+      "id": "PE-RUC-20510064888",
+      "name": "INTROSOFT TI S.A.C."
+    },
+    {
+      "id": "PE-RUC-20467534026",
+      "name": "AMERICA MOVIL PERU S.A.C."
+    },
+    {
+      "id": "PE-RUC-20264180971",
+      "name": "PROFILE CONSULTING GROUP SOCIEDAD ANONIMA CERRADA - PROFILE CONSULTING GROUP S.A.C."
+    },
+    {
+      "id": "PE-RUC-20524531861",
+      "name": "THINK NETWORKS PERU S.A.C."
+    },
+    {
+      "id": "PE-RUC-20553404631",
+      "name": "DAILY TECHNOLOGY S.A.C."
+    }
+  ],
+  "adjudicaciones": [
+    {
+      "id_award": "1179832-20553404631",
+      "date": "2026-01-29T00:00:00-05:00",
+      "value_amount": 135531.0,
+      "value_currency": "PEN",
+      "awards_id": "1179832-20553404631",
+      "id_proveedor": "PE-RUC-20553404631",
+      "name": "DAILY TECHNOLOGY S.A.C."
+    }
+  ],
+  "items_adjudicados": [
+    {
+      "awards_id": "1179832-20553404631",
+      "description": "Contratación del Servicio de Suscripción de Licencias de Software de Colaboración y Mensajería Electrónica en la Nube Microsoft Office 365 o equivalente para el FONDEPES",
+      "quantity": 1.0,
+      "totalValue_amount": 135531.0,
+      "totalValue_currency": "PEN",
+      "statusDetails": "CONTRATADO"
+    }
+  ],
+  "contratos": [
+    {
+      "id": 2377677,
+      "awardID": "1179832-20553404631",
+      "dateSigned": "2026-02-20T00:00:00-05:00",
+      "value_amount": 135531.0,
+      "value_currency": "PEN",
+      "statusDetails": NaN
+    }
+  ]
+}

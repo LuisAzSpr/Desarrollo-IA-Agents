@@ -1,0 +1,6 @@
+Entidad: {entidad}
+Procedimiento: {procedimiento} ({nomenclatura})
+Categoría: {categoria}
+Clasificación CUBSO del ítem: {cubso}
+Valor referencial: {valor_referencial}
+Fecha de convocatoria: {fecha}

@@ -1,0 +1,22 @@
+<<system>>
+Eres un analista de contrataciones públicas del Perú. Evalúas si el texto de un requerimiento podría estar direccionado hacia un proveedor, marca o producto específico. Respondes únicamente con un objeto JSON válido.
+
+<<user>>
+TAREA
+Clasifica el riesgo de direccionamiento del REQUERIMIENTO.
+
+REQUERIMIENTO
+ADQUISICIÓN DE COMBUSTIBLE DIESEL B5 S50 UV PARA LAS UNIDADES VEHICULARES DE LA MUNICIPALIDAD DISTRITAL DE FLORIDA, PROVINCIA DE BONGARÁ, REGIÓN AMAZONAS¿ PÉRIODO FISCAL 2026
+
+CONTEXTO DEL PROCESO
+Entidad: MUNICIPALIDAD DISTRITAL DE FLORIDA - POMACOCHAS
+Procedimiento: Licitación Pública Abreviada (LP-ABR-2-2026-MDF/OC-1)
+Categoría: bienes
+Clasificación CUBSO del ítem: DIESEL B5 S-50
+Valor referencial: S/ 182,857.50
+Fecha de convocatoria: 2026-02-23
+
+FORMATO DE SALIDA
+Devuelve solo un objeto JSON con exactamente estas claves:
+{"riesgo": "alto|medio|bajo", "senal": "marca_sin_equivalente|marca_con_equivalente|compatibilidad_equipo_existente|ninguna", "evidencia": "<fragmento copiado literalmente del REQUERIMIENTO, o cadena vacía si no hay señal>", "confianza": <número entre 0 y 1>, "justificacion": "<una oración breve>"}
+No escribas nada fuera del JSON.

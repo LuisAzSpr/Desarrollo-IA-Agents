@@ -1,0 +1,17 @@
+{
+  "caso": "C05",
+  "prompt": "P1",
+  "contexto": "C0",
+  "con_cache": {
+    "ms": 8035.0,
+    "texto": "{\"riesgo\": \"medio\", \"senal\": \"marca_con_equivalente\", \"evidencia\": \"\", \"confianza\": 0."
+  },
+  "sin_cache": {
+    "ms": 75818.8,
+    "texto": "{\"riesgo\": \"medio\", \"senal\": \"marca_con_equivalente\", \"evidencia\": \"\", \"confianza\": 0."
+  },
+  "mismo_texto": true,
+  "prompt_tokens": 631,
+  "n_tokens_generados": 32,
+  "aceleracion": 9.44
+}

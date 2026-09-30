@@ -1,0 +1,193 @@
+{
+  "ocid": "ocds-dgv273-seacev3-1209013",
+  "entidad": "GOBIERNO REGIONAL DE HUANUCO - RED DE SALUD PACHITEA",
+  "entidad_id": "PE-CONSUCODE-204126",
+  "procedimiento": "Licitación Pública Abreviada",
+  "nomenclatura": "LP-ABR-1-2026-RSP/OC-1",
+  "categoria": "goods",
+  "objeto": "ADQUISICION DE TINTAS PARA IMPRESORA EPSON WORKFORCE PRO EM-C800",
+  "fecha_convocatoria": "2026-04-24T12:31:00-05:00",
+  "valor_referencial_pen": 97437.5,
+  "n_postores_ocds": 23.0,
+  "bases_y_documentos": [
+    {
+      "title": "Bases Administrativas",
+      "documentType": "biddingDocuments",
+      "format": "pdf",
+      "datePublished": "2026-04-24T12:31:00-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=8d6ff5d5-b30e-41f1-9703-6681b8cf0499"
+    },
+    {
+      "title": "Pliego de absolución de consultas y observaciones",
+      "documentType": "clarifications",
+      "format": "pdf",
+      "datePublished": "2026-04-30T16:17:43-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=4503d131-1d0b-476b-bb59-b2e096b1f2dd"
+    },
+    {
+      "title": "Bases Integradas",
+      "documentType": "biddingDocuments",
+      "format": "pdf",
+      "datePublished": "2026-04-30T16:17:44-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=c808d2b3-ea40-4e78-9f92-7c74e7650ae7"
+    },
+    {
+      "title": "Documentos de Presentación de Propuestas",
+      "documentType": "biddingDocuments",
+      "format": "zip",
+      "datePublished": "2026-05-11T16:06:35-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=e7395b9b-e10b-4ba0-8f27-f21b070232ee"
+    },
+    {
+      "title": "Documentos de Calificación y Evaluación",
+      "documentType": "evaluationReports",
+      "format": "zip",
+      "datePublished": "2026-05-11T16:06:35-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=aea4c5a1-8287-495c-bb8e-db658c285892"
+    },
+    {
+      "title": "Documentos de Otorgamiento de Buena Pro",
+      "documentType": "awardNotice",
+      "format": "zip",
+      "datePublished": "2026-05-11T16:06:35-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=f65cc34e-76b7-4e71-885f-963597191bc8"
+    }
+  ],
+  "items": [
+    {
+      "id": 21258512,
+      "description": "ADQUISICION DE TINTAS PARA IMPRESORA EPSON WORKFORCE PRO EM-C800",
+      "quantity": 1.0,
+      "unit_name": "Unidad",
+      "totalValue_amount": 97437.5,
+      "totalValue_currency": "PEN",
+      "classification_description": NaN,
+      "statusDetails": "CONTRATADO"
+    }
+  ],
+  "postores": [
+    {
+      "id": "PE-RUC-20613520369",
+      "name": "INFRAESTRUCTURA DIGITAL ANDINA S.A.C."
+    },
+    {
+      "id": "PE-RUC-20107903951",
+      "name": "TRADING SERVICE M&A SRLTDA"
+    },
+    {
+      "id": "PE-RUC-20611852445",
+      "name": "INVERSIONES Y CONSULTORES SISAY S.A.C."
+    },
+    {
+      "id": "PE-RUC-20609856395",
+      "name": "HM COMPUTER PARTNER S.A.C."
+    },
+    {
+      "id": "PE-RUC-20486468913",
+      "name": "PERU DATA CONSULT E.I.R.L."
+    },
+    {
+      "id": "PE-RUC-20502687647",
+      "name": "TECHNOLOGY LEADER S.A.C."
+    },
+    {
+      "id": "PE-RUC-20605880852",
+      "name": "TEXUP GROUP E.I.R.L."
+    },
+    {
+      "id": "PE-RUC-20490744925",
+      "name": "COPIER MUNDO EMPRESA INDIVIDUAL DE RESPONSABILIDAD LIMITADA - COPIER MUNDO E.I.R.L."
+    },
+    {
+      "id": "PE-RUC-20602522998",
+      "name": "INDUSTRIAS CONCRETERAS JOSE DAVID E.I.R.L."
+    },
+    {
+      "id": "PE-RUC-20602951252",
+      "name": "CONSULTORIA EN TECNOLOGIA INFORMATICA Y SERVICIOS GENERALES E.I.R.L."
+    },
+    {
+      "id": "PE-RUC-20605312048",
+      "name": "SERVICIOS GENERALES E INVERSIONES JK EMPRESA INDIVIDUAL DE RESPONSABILIDAD LIMITADA"
+    },
+    {
+      "id": "PE-RUC-20571312094",
+      "name": "LABSET PROTEC WORLD PERU S.A.C. - LPWP S.A.C."
+    },
+    {
+      "id": "PE-RUC-20610963952",
+      "name": "GRUPO FRAVINSA E.I.R.L."
+    },
+    {
+      "id": "PE-RUC-20602561284",
+      "name": "TECHNOLOGY SUPPLIERS PERU S.A.C."
+    },
+    {
+      "id": "PE-RUC-20605753907",
+      "name": "INVERSIONES GENERALES LAURA ROCA S.A.C."
+    },
+    {
+      "id": "PE-RUC-20606041030",
+      "name": "ABANS COMPANY S.A.C."
+    },
+    {
+      "id": "PE-RUC-20509131989",
+      "name": "JL BUSINESS AND SERVICE S.A.C."
+    },
+    {
+      "id": "PE-RUC-20556731285",
+      "name": "NEW SOLUTIONS PERU S.A.C."
+    },
+    {
+      "id": "PE-RUC-10437838581",
+      "name": "MEDINA GUEVARA SEGUNDO YOBAR"
+    },
+    {
+      "id": "PE-RUC-20600815467",
+      "name": "DK SOLUTIONS S.A.C."
+    },
+    {
+      "id": "PE-RUC-20573015976",
+      "name": "MAS CONSULTORA Y CONSTRUCTORA E.I.R.L"
+    },
+    {
+      "id": "PE-RUC-20613921002",
+      "name": "C.L.D. CONTRATISTAS GENERALES S.A.C."
+    },
+    {
+      "id": "PE-RUC-10461869926",
+      "name": "SEGURA FLORES FREDY FELIX"
+    }
+  ],
+  "adjudicaciones": [
+    {
+      "id_award": "1209013-10461869926",
+      "date": "2026-05-11T00:00:00-05:00",
+      "value_amount": 93000.0,
+      "value_currency": "PEN",
+      "awards_id": "1209013-10461869926",
+      "id_proveedor": "PE-RUC-10461869926",
+      "name": "SEGURA FLORES FREDY FELIX"
+    }
+  ],
+  "items_adjudicados": [
+    {
+      "awards_id": "1209013-10461869926",
+      "description": "ADQUISICION DE TINTAS PARA IMPRESORA EPSON WORKFORCE PRO EM-C800",
+      "quantity": 1.0,
+      "totalValue_amount": 93000.0,
+      "totalValue_currency": "PEN",
+      "statusDetails": "CONTRATADO"
+    }
+  ],
+  "contratos": [
+    {
+      "id": 2398622,
+      "awardID": "1209013-10461869926",
+      "dateSigned": "2026-06-04T00:00:00-05:00",
+      "value_amount": 93000.0,
+      "value_currency": "PEN",
+      "statusDetails": NaN
+    }
+  ]
+}

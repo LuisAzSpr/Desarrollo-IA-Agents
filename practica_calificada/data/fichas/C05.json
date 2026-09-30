@@ -1,0 +1,91 @@
+{
+  "ocid": "ocds-dgv273-seacev3-1095541",
+  "entidad": "SUPERINTENDENCIA DE BANCA, SEGUROS Y AFP",
+  "entidad_id": "PE-CONSUCODE-1922",
+  "procedimiento": "Contratación Directa",
+  "nomenclatura": "DIRECTA-PROC-2-2025-SBS-S-1",
+  "categoria": "services",
+  "objeto": "CONTRATACION DEL SERVICIO DE SOPORTE TECNICO Y MANTENIMIENTO DE SERVIDORES ORACLE O EQUIVALENTE",
+  "fecha_convocatoria": "2025-03-12T13:47:00-05:00",
+  "valor_referencial_pen": 786623.79,
+  "n_postores_ocds": 1.0,
+  "bases_y_documentos": [
+    {
+      "title": "Bases Administrativas",
+      "documentType": "biddingDocuments",
+      "format": "doc",
+      "datePublished": "2025-03-12T13:47:00-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=a041cf36-65d5-45d0-8838-e4b19da13b12"
+    },
+    {
+      "title": "Resumen ejecutivo",
+      "documentType": "biddingDocuments",
+      "format": "pdf",
+      "datePublished": "2025-03-12T13:47:00-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=7f59d0c5-70aa-40d6-b5d2-58c6bfe89858"
+    },
+    {
+      "title": "Documentos de Presentación de Propuestas",
+      "documentType": "biddingDocuments",
+      "format": "zip",
+      "datePublished": "2025-03-17T16:26:41-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=ec9a44ba-c8cf-4701-940e-63a1b1da42f0"
+    },
+    {
+      "title": "Documentos de Otorgamiento de Buena Pro",
+      "documentType": "awardNotice",
+      "format": "zip",
+      "datePublished": "2025-03-17T16:26:41-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=049d3791-1ebb-4940-ac0f-d2322e2e5a74"
+    }
+  ],
+  "items": [
+    {
+      "id": 20937466,
+      "description": "SERVICIO DE SOPORTE TECNICO Y MANTENIMIENTO DE SERVIDORES ORACLE O EQUIVALENTE",
+      "quantity": 1.0,
+      "unit_name": "Servicio",
+      "totalValue_amount": 786623.79,
+      "totalValue_currency": "PEN",
+      "classification_description": "SERVICIO DE SOPORTE Y MANTENIMIENTO DE LICENCIA DE SOFTWARE DE SERVIDOR DE APLICACIONES",
+      "statusDetails": "CONTRATADO"
+    }
+  ],
+  "postores": [
+    {
+      "id": "PE-RUC-20182246078",
+      "name": "SISTEMAS ORACLE DEL PERU S.R.L."
+    }
+  ],
+  "adjudicaciones": [
+    {
+      "id_award": "1095541-20182246078",
+      "date": "2025-03-17T00:00:00-05:00",
+      "value_amount": 786623.79,
+      "value_currency": "PEN",
+      "awards_id": "1095541-20182246078",
+      "id_proveedor": "PE-RUC-20182246078",
+      "name": "SISTEMAS ORACLE DEL PERU S.R.L."
+    }
+  ],
+  "items_adjudicados": [
+    {
+      "awards_id": "1095541-20182246078",
+      "description": "SERVICIO DE SOPORTE TECNICO Y MANTENIMIENTO DE SERVIDORES ORACLE O EQUIVALENTE",
+      "quantity": 1.0,
+      "totalValue_amount": 786623.79,
+      "totalValue_currency": "PEN",
+      "statusDetails": "CONTRATADO"
+    }
+  ],
+  "contratos": [
+    {
+      "id": 2316183,
+      "awardID": "1095541-20182246078",
+      "dateSigned": "2025-03-25T00:00:00-05:00",
+      "value_amount": 786623.79,
+      "value_currency": "PEN",
+      "statusDetails": NaN
+    }
+  ]
+}

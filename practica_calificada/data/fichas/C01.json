@@ -1,0 +1,213 @@
+{
+  "ocid": "ocds-dgv273-seacev3-1216035",
+  "entidad": "AGENCIA DE COMPRAS DE LAS FUERZAS ARMADAS",
+  "entidad_id": "PE-CONSUCODE-201143",
+  "procedimiento": "Licitación Pública Abreviada",
+  "nomenclatura": "LP-ABR-1-2026-OGA-ACFFAA-1",
+  "categoria": "goods",
+  "objeto": "ADQUISICIÓN DE SWITCH Y ACCESS POINT PARA LA ACFFAA",
+  "fecha_convocatoria": "2026-05-18T15:44:00-05:00",
+  "valor_referencial_pen": 173751.99,
+  "n_postores_ocds": 28.0,
+  "bases_y_documentos": [
+    {
+      "title": "Bases Administrativas",
+      "documentType": "biddingDocuments",
+      "format": "pdf",
+      "datePublished": "2026-05-18T15:44:00-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=a2bc3acf-ee3f-4c6a-a08a-45242b929265"
+    },
+    {
+      "title": "Pliego de absolución de consultas y observaciones",
+      "documentType": "clarifications",
+      "format": "pdf",
+      "datePublished": "2026-05-28T15:53:37-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=90eef96c-6f59-4204-b39d-8d94b3329f26"
+    },
+    {
+      "title": "Bases Integradas",
+      "documentType": "biddingDocuments",
+      "format": "pdf",
+      "datePublished": "2026-05-28T15:53:37-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=fcd4a840-8784-4c00-b109-b323ebcb74a7"
+    },
+    {
+      "title": "Documentos de Presentación de Propuestas",
+      "documentType": "biddingDocuments",
+      "format": "zip",
+      "datePublished": "2026-06-16T12:18:08-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=53547050-7d39-4616-b794-f87edfd26055"
+    },
+    {
+      "title": "Documentos de Calificación y Evaluación",
+      "documentType": "evaluationReports",
+      "format": "zip",
+      "datePublished": "2026-06-16T12:18:08-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=a620e403-a86a-4960-9824-64e65259de68"
+    },
+    {
+      "title": "Documentos de Otorgamiento de Buena Pro",
+      "documentType": "awardNotice",
+      "format": "zip",
+      "datePublished": "2026-06-16T12:18:09-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=5110ede1-43b8-4e2c-a676-194296d76603"
+    }
+  ],
+  "items": [
+    {
+      "id": 21278416,
+      "description": "ADQUISICION DE SWITCHES Y ACCESS POINT DE LA MARCA CISCO PARA LA AGENCIA DE COMPRAS DE LAS FUERZAS ARMADAS",
+      "quantity": 3.0,
+      "unit_name": "Unidad",
+      "totalValue_amount": 173751.99,
+      "totalValue_currency": "PEN",
+      "classification_description": NaN,
+      "statusDetails": "CONTRATADO"
+    }
+  ],
+  "postores": [
+    {
+      "id": "PE-RUC-20605753907",
+      "name": "INVERSIONES GENERALES LAURA ROCA S.A.C."
+    },
+    {
+      "id": "PE-RUC-20613035398",
+      "name": "OCAMPER S.A.C."
+    },
+    {
+      "id": "PE-RUC-20521978997",
+      "name": "DATA NETWORK PERU S.A.C."
+    },
+    {
+      "id": "PE-RUC-20613850491",
+      "name": "CORPORACION SERVISCON E.I.R.L."
+    },
+    {
+      "id": "PE-RUC-20611379006",
+      "name": "J & P CORP SERVICIOS GENERALES E.I.R.L."
+    },
+    {
+      "id": "PE-RUC-20607236900",
+      "name": "CONSTRUCTION SITE PERU E.I.R.L."
+    },
+    {
+      "id": "PE-RUC-10413625217",
+      "name": "CORTEZ CARPIO GUSTAVO ADOLFO"
+    },
+    {
+      "id": "PE-RUC-20545364612",
+      "name": "CONSULTUSS AD MANUS TRAHERE S.A.C - CAMT S.A.C."
+    },
+    {
+      "id": "PE-RUC-20614386160",
+      "name": "INVERSIONES LIRVANI S.A.C."
+    },
+    {
+      "id": "PE-RUC-20605603883",
+      "name": "GENESIS SOLUTIONS TECHNOLOGIES S.A.C."
+    },
+    {
+      "id": "PE-RUC-20507241400",
+      "name": "TECH4ALLPERU SOCIEDAD ANONIMA CERRADA"
+    },
+    {
+      "id": "PE-RUC-20511522987",
+      "name": "WORLDSYS EMPRESA INDIVIDUAL DE RESPONSABILIDAD LIMITADA"
+    },
+    {
+      "id": "PE-RUC-20113277964",
+      "name": "JAPAN COMPUTER SERVICE S.A.C."
+    },
+    {
+      "id": "PE-RUC-20607015130",
+      "name": "PLATAFORMA TECNOLOGICA EN COMUNICACION Y SEGURIDAD S.A.C. - PLATECCS S.A.C."
+    },
+    {
+      "id": "PE-RUC-20530293298",
+      "name": "ECHE & LIJARZA CONSULTORES E.I.R.L."
+    },
+    {
+      "id": "PE-RUC-20604449708",
+      "name": "MAFRA CONSULTORES S.A.C."
+    },
+    {
+      "id": "PE-RUC-20604215651",
+      "name": "BTM INGENIERIA Y PROYECTOS S.A.C."
+    },
+    {
+      "id": "PE-RUC-20613921002",
+      "name": "C.L.D. CONTRATISTAS GENERALES S.A.C."
+    },
+    {
+      "id": "PE-RUC-20601397618",
+      "name": "DNP CORP SOCIEDAD ANONIMA CERRADA - DNP CORP S.A.C."
+    },
+    {
+      "id": "PE-RUC-20605361901",
+      "name": "INVERSIONES MARHIL S.R.L."
+    },
+    {
+      "id": "PE-RUC-20612051705",
+      "name": "JC SISTEMAS Y COMUNICACIONES S.R.L."
+    },
+    {
+      "id": "PE-RUC-20556731285",
+      "name": "NEW SOLUTIONS PERU S.A.C."
+    },
+    {
+      "id": "PE-RUC-20517793630",
+      "name": "CLADIRECT PERU S.A.C."
+    },
+    {
+      "id": "PE-RUC-20602916139",
+      "name": "NOOVUS TECHNOLOGY BUSINESS UNIT S.A.C."
+    },
+    {
+      "id": "PE-RUC-20602823696",
+      "name": "MC INNOVATEC S.A.C."
+    },
+    {
+      "id": "PE-RUC-20607753602",
+      "name": "GRUPO D2D SOLUTIONS S.A.C."
+    },
+    {
+      "id": "PE-RUC-20514473286",
+      "name": "AFINIT S.A.C."
+    },
+    {
+      "id": "PE-RUC-20518360907",
+      "name": "PRONET SYSTEM S.A.C."
+    }
+  ],
+  "adjudicaciones": [
+    {
+      "id_award": "1216035-20602823696",
+      "date": "2026-06-16T00:00:00-05:00",
+      "value_amount": 184500.0,
+      "value_currency": "PEN",
+      "awards_id": "1216035-20602823696",
+      "id_proveedor": "PE-RUC-20602823696",
+      "name": "MC INNOVATEC S.A.C."
+    }
+  ],
+  "items_adjudicados": [
+    {
+      "awards_id": "1216035-20602823696",
+      "description": "ADQUISICION DE SWITCHES Y ACCESS POINT DE LA MARCA CISCO PARA LA AGENCIA DE COMPRAS DE LAS FUERZAS ARMADAS",
+      "quantity": 3.0,
+      "totalValue_amount": 184500.0,
+      "totalValue_currency": "PEN",
+      "statusDetails": "CONTRATADO"
+    }
+  ],
+  "contratos": [
+    {
+      "id": 2406160,
+      "awardID": "1216035-20602823696",
+      "dateSigned": "2026-07-07T00:00:00-05:00",
+      "value_amount": 184500.0,
+      "value_currency": "PEN",
+      "statusDetails": NaN
+    }
+  ]
+}

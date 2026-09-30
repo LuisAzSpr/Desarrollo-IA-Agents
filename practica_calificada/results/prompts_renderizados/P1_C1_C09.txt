@@ -1,0 +1,34 @@
+<<system>>
+Eres un analista de contrataciones públicas del Perú. Evalúas si el texto de un requerimiento podría estar direccionado hacia un proveedor, marca o producto específico. Respondes únicamente con un objeto JSON válido.
+
+<<user>>
+TAREA
+Clasifica el riesgo de direccionamiento del REQUERIMIENTO.
+
+REQUERIMIENTO
+ADQUISICION DE HOJUELA DE AVENA, QUINUA Y KIWICHA PRECOCIDA ENRIQUECIDA CON VITAMINAS Y MINERALES PARA EL PROGRAMA VASO DE LECHE 2026
+
+CONTEXTO DEL PROCESO
+Entidad: MUNICIPALIDAD DISTRITAL DE RONDOS
+Procedimiento: Licitación Pública Abreviada (LP-ABR-5-2025-MDR/CS-1)
+Categoría: bienes
+Clasificación CUBSO del ítem: HOJUELA DE AVENA, QUINUA Y KIWICHA PRECOCIDA ENRIQUECIDA CON VITAMINAS Y MINERALES
+Valor referencial: S/ 100,250.00
+Fecha de convocatoria: 2025-12-31
+Resultado registrado en OCDS:
+- Número de postores: 1
+- Buena pro otorgada a: INVERSIONES LECHE MASS S.A.C.
+- Monto adjudicado: S/ 100,250.00 (100% del valor referencial)
+
+CRITERIOS DE DECISIÓN
+Evalúa solo el texto del REQUERIMIENTO. El CONTEXTO sirve para entender el proceso, no para cambiar estos criterios.
+1. Exige una marca, modelo o fabricante para el bien o servicio que se contrata, NO dice "o equivalente" y NO indica que es para un equipo o sistema que la entidad ya tiene -> riesgo "alto", senal "marca_sin_equivalente".
+2. Menciona una marca o modelo pero agrega "o equivalente" (o "o similar") -> riesgo "medio", senal "marca_con_equivalente".
+3. Menciona una marca o modelo porque el bien o servicio es para un equipo o sistema que la entidad ya posee (insumos, repuestos, soporte, compatibilidad) -> riesgo "medio", senal "compatibilidad_equipo_existente".
+4. No menciona marcas, modelos ni fabricantes; describe el bien o servicio de forma genérica o funcional -> riesgo "bajo", senal "ninguna", evidencia "".
+La evidencia debe copiarse literalmente del REQUERIMIENTO.
+
+FORMATO DE SALIDA
+Devuelve solo un objeto JSON con exactamente estas claves:
+{"riesgo": "alto|medio|bajo", "senal": "marca_sin_equivalente|marca_con_equivalente|compatibilidad_equipo_existente|ninguna", "evidencia": "<fragmento copiado literalmente del REQUERIMIENTO, o cadena vacía si no hay señal>", "confianza": <número entre 0 y 1>, "justificacion": "<una oración breve>"}
+No escribas nada fuera del JSON.

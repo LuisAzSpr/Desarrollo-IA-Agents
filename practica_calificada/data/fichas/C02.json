@@ -1,0 +1,137 @@
+{
+  "ocid": "ocds-dgv273-seacev3-1177957",
+  "entidad": "GOBIERNO REGIONAL DE CUSCO-ESCUELA DE BELLAS ARTES DIEGO QUISPE TITO",
+  "entidad_id": "PE-CONSUCODE-10044",
+  "procedimiento": "Licitación Pública Abreviada",
+  "nomenclatura": "LP-ABR-3-2025-UNADQTC-1",
+  "categoria": "goods",
+  "objeto": "ADQUISICIÓN DE LICENCIAS MICROSOFT OFFICE LTSC PROFESSIONAL PLUS 2024 CSP ADMINISTRABLE Y TRANSFERIBLE PARA LA UNIVERSIDAD NACIONAL DE ARTE DIEGO QUISPE TITO DEL CUSCO.",
+  "fecha_convocatoria": "2025-12-12T11:58:00-05:00",
+  "valor_referencial_pen": 231900.0,
+  "n_postores_ocds": 9.0,
+  "bases_y_documentos": [
+    {
+      "title": "Bases Administrativas",
+      "documentType": "biddingDocuments",
+      "format": "docx",
+      "datePublished": "2025-12-12T11:58:00-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=f23d52db-0cb8-42b1-bcb1-9829ce3a5ba9"
+    },
+    {
+      "title": "Pliego de absolución de consultas y observaciones",
+      "documentType": "clarifications",
+      "format": "pdf",
+      "datePublished": "2025-12-18T15:34:58-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=dc1f86d3-7d48-4ec0-a3ee-f8b8fbc9abbd"
+    },
+    {
+      "title": "Bases Integradas",
+      "documentType": "biddingDocuments",
+      "format": "docx",
+      "datePublished": "2025-12-18T15:34:59-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=f98b95aa-9170-4654-9f51-62213a511f07"
+    },
+    {
+      "title": "Documentos de Presentación de Propuestas",
+      "documentType": "biddingDocuments",
+      "format": "zip",
+      "datePublished": "2025-12-24T12:35:33-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=19372e54-d17c-4baf-9fc4-3e0dfb06b279"
+    },
+    {
+      "title": "Documentos de Calificación y Evaluación",
+      "documentType": "evaluationReports",
+      "format": "zip",
+      "datePublished": "2025-12-24T12:35:33-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=d25035af-447d-445e-a8e8-960dd0d79692"
+    },
+    {
+      "title": "Documentos de Otorgamiento de Buena Pro",
+      "documentType": "awardNotice",
+      "format": "zip",
+      "datePublished": "2025-12-24T12:35:34-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=b215a621-8953-441c-a085-b9012e0c4584"
+    }
+  ],
+  "items": [
+    {
+      "id": 21176054,
+      "description": "ADQUISICIÓN DE LICENCIAS MICROSOFT OFFICE LTSC PROFESSIONAL PLUS 2024 CSP ADMINISTRABLE Y TRANSFERIBLE PARA LA UNIVERSIDAD NACIONAL DE ARTE DIEGO QUISPE TITO DEL CUSCO.",
+      "quantity": 400.0,
+      "unit_name": "Unidad",
+      "totalValue_amount": 231900.0,
+      "totalValue_currency": "PEN",
+      "classification_description": NaN,
+      "statusDetails": "CONTRATADO"
+    }
+  ],
+  "postores": [
+    {
+      "id": "PE-RUC-10407868639",
+      "name": "BORDA BENITO CARLOS ALBERTO"
+    },
+    {
+      "id": "PE-RUC-20517653030",
+      "name": "LINE OF COMPUTING & SERVICES SAC"
+    },
+    {
+      "id": "PE-RUC-20609607875",
+      "name": "PORTLAND STUDIO E.I.R.L."
+    },
+    {
+      "id": "PE-RUC-20540021148",
+      "name": "BIOTECNOLOGIA, SYSTEMAS DE COMPUTO Y TELECOMUNICACIONES S.A.C. - BIOSYSTELCOM S.A.C."
+    },
+    {
+      "id": "PE-RUC-20607821608",
+      "name": "BGS PERU CO. LTD. E.I.R.L."
+    },
+    {
+      "id": "PE-RUC-20521435357",
+      "name": "XENTIC S.A.C."
+    },
+    {
+      "id": "PE-RUC-20613520369",
+      "name": "INFRAESTRUCTURA DIGITAL ANDINA S.A.C."
+    },
+    {
+      "id": "PE-RUC-20608895176",
+      "name": "REDINET PERU S.A.C."
+    },
+    {
+      "id": "PE-RUC-20603003609",
+      "name": "COMPUMECH PERU SOCIEDAD ANONIMA CERRADA - COMPUMECH PERU S.A.C."
+    }
+  ],
+  "adjudicaciones": [
+    {
+      "id_award": "1177957-20613520369",
+      "date": "2025-12-24T00:00:00-05:00",
+      "value_amount": 179000.0,
+      "value_currency": "PEN",
+      "awards_id": "1177957-20613520369",
+      "id_proveedor": "PE-RUC-20613520369",
+      "name": "INFRAESTRUCTURA DIGITAL ANDINA S.A.C."
+    }
+  ],
+  "items_adjudicados": [
+    {
+      "awards_id": "1177957-20613520369",
+      "description": "ADQUISICIÓN DE LICENCIAS MICROSOFT OFFICE LTSC PROFESSIONAL PLUS 2024 CSP ADMINISTRABLE Y TRANSFERIBLE PARA LA UNIVERSIDAD NACIONAL DE ARTE DIEGO QUISPE TITO DEL CUSCO.",
+      "quantity": 400.0,
+      "totalValue_amount": 179000.0,
+      "totalValue_currency": "PEN",
+      "statusDetails": "CONTRATADO"
+    }
+  ],
+  "contratos": [
+    {
+      "id": 2376301,
+      "awardID": "1177957-20613520369",
+      "dateSigned": "2026-01-29T00:00:00-05:00",
+      "value_amount": 179000.0,
+      "value_currency": "PEN",
+      "statusDetails": NaN
+    }
+  ]
+}

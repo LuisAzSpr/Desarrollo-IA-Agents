@@ -1,0 +1,145 @@
+{
+  "ocid": "ocds-dgv273-seacev3-2025-200121-10",
+  "entidad": "MTC - AUTORIDAD PORTUARIA NACIONAL",
+  "entidad_id": "PE-CONSUCODE-200121",
+  "procedimiento": "Licitación Pública Abreviada",
+  "nomenclatura": "LP-ABR-1-2025-APN-1",
+  "categoria": "goods",
+  "objeto": "Adquisicion de licencias de software de Autodesk AutoCAD en su ultima version o equivalente",
+  "fecha_convocatoria": "2025-07-25T19:32:00-05:00",
+  "valor_referencial_pen": 95102.29,
+  "n_postores_ocds": 11.0,
+  "bases_y_documentos": [
+    {
+      "title": "Bases Administrativas",
+      "documentType": "biddingDocuments",
+      "format": "pdf",
+      "datePublished": "2025-07-25T19:32:00-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=17484023-9c5e-41a1-b44d-4cd2cac90466"
+    },
+    {
+      "title": "Pliego de absolución de consultas y observaciones",
+      "documentType": "clarifications",
+      "format": "pdf",
+      "datePublished": "2025-08-05T16:43:53-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=68b53325-4edc-4fc8-beff-b288c2e45cab"
+    },
+    {
+      "title": "Bases Integradas",
+      "documentType": "biddingDocuments",
+      "format": "pdf",
+      "datePublished": "2025-08-05T16:43:53-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=ad6960ef-8c27-4e61-b911-c48bfb147ab9"
+    },
+    {
+      "title": "Documentos de Presentación de Propuestas",
+      "documentType": "biddingDocuments",
+      "format": "zip",
+      "datePublished": "2025-08-15T16:57:44-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=e467cce5-55ef-4b33-865e-77744a5c4462"
+    },
+    {
+      "title": "Documentos de Calificación y Evaluación",
+      "documentType": "evaluationReports",
+      "format": "zip",
+      "datePublished": "2025-08-15T16:57:44-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=aa28a194-cc3c-4672-af42-db8713f29928"
+    },
+    {
+      "title": "Documentos de Otorgamiento de Buena Pro",
+      "documentType": "awardNotice",
+      "format": "zip",
+      "datePublished": "2025-08-15T16:57:44-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=6751dce7-9219-4797-a42e-668d94a3751d"
+    }
+  ],
+  "items": [
+    {
+      "id": 21057285,
+      "description": "Adquisicion de licencias de software de Autodesk Autocad en su ultima version",
+      "quantity": 11.0,
+      "unit_name": "Unidad",
+      "totalValue_amount": 95102.29,
+      "totalValue_currency": "PEN",
+      "classification_description": "SOFTWARE (INC. LICENCIA) PARA DISEÑO ASISTIDO POR COMPUTADORA 2D 3D",
+      "statusDetails": "CONTRATADO"
+    }
+  ],
+  "postores": [
+    {
+      "id": "PE-RUC-20612689921",
+      "name": "SOFHARDS S.A.C."
+    },
+    {
+      "id": "PE-RUC-20566117895",
+      "name": "GEA SERVICES TECHNOLOGY SOCIEDAD ANONIMA CERRADA"
+    },
+    {
+      "id": "PE-RUC-20607396516",
+      "name": "COMERCIO E INVERSIONES ANCCAS S.A.C."
+    },
+    {
+      "id": "PE-RUC-20563424941",
+      "name": "GUZTELL CONSTRUCCIONES S.A.C."
+    },
+    {
+      "id": "PE-RUC-20611054166",
+      "name": "CORPORACION KATSUMOTO S.A.C."
+    },
+    {
+      "id": "PE-RUC-20511522987",
+      "name": "WORLDSYS EMPRESA INDIVIDUAL DE RESPONSABILIDAD LIMITADA"
+    },
+    {
+      "id": "PE-RUC-20611242795",
+      "name": "DITI TECHNOLOGY SOCIEDAD ANONIMA CERRADA - DITI TECHNOLOGY S.A.C."
+    },
+    {
+      "id": "PE-RUC-20264180971",
+      "name": "PROFILE CONSULTING GROUP SOCIEDAD ANONIMA CERRADA - PROFILE CONSULTING GROUP S.A.C."
+    },
+    {
+      "id": "PE-RUC-20609607875",
+      "name": "PORTLAND STUDIO E.I.R.L."
+    },
+    {
+      "id": "PE-RUC-20612050407",
+      "name": "COMGRAP PERU S.A.C."
+    },
+    {
+      "id": "PE-RUC-20122177816",
+      "name": "SISTEMAS EMPRESARIALES COMPUTARIZADOS SA"
+    }
+  ],
+  "adjudicaciones": [
+    {
+      "id_award": "1136745-20609607875",
+      "date": "2025-08-15T00:00:00-05:00",
+      "value_amount": 74800.0,
+      "value_currency": "PEN",
+      "awards_id": "1136745-20609607875",
+      "id_proveedor": "PE-RUC-20609607875",
+      "name": "PORTLAND STUDIO E.I.R.L."
+    }
+  ],
+  "items_adjudicados": [
+    {
+      "awards_id": "1136745-20609607875",
+      "description": "Adquisicion de licencias de software de Autodesk Autocad en su ultima version",
+      "quantity": 11.0,
+      "totalValue_amount": 74800.0,
+      "totalValue_currency": "PEN",
+      "statusDetails": "CONTRATADO"
+    }
+  ],
+  "contratos": [
+    {
+      "id": 2344441,
+      "awardID": "1136745-20609607875",
+      "dateSigned": "2025-09-01T00:00:00-05:00",
+      "value_amount": 74800.0,
+      "value_currency": "PEN",
+      "statusDetails": NaN
+    }
+  ]
+}

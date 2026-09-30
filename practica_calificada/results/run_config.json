@@ -1,0 +1,145 @@
+{
+  "fecha": "2026-09-10T22:28:42",
+  "modelo": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "dtype": "float32",
+  "device": "cpu",
+  "torch_threads": 8,
+  "torch": "2.9.0+cpu",
+  "transformers": "4.57.1",
+  "python": "3.10.11",
+  "plataforma": "Windows-10-10.0.26200-SP0",
+  "max_new_tokens": 192,
+  "decoding": {
+    "greedy": {
+      "do_sample": false,
+      "repetition_penalty": 1.0,
+      "max_new_tokens": 192
+    },
+    "sampling": {
+      "do_sample": true,
+      "temperature": 0.8,
+      "top_p": 0.9,
+      "top_k": 0,
+      "repetition_penalty": 1.0,
+      "max_new_tokens": 192
+    }
+  },
+  "semilla_base": 42,
+  "semillas_sampling": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "experimentos": {
+    "exp1_prompt": [
+      [
+        "P0",
+        "P0",
+        "C0",
+        "greedy",
+        [
+          42
+        ]
+      ],
+      [
+        "P1",
+        "P1",
+        "C0",
+        "greedy",
+        [
+          42
+        ]
+      ]
+    ],
+    "exp2_contexto": [
+      [
+        "C0",
+        "P1",
+        "C0",
+        "greedy",
+        [
+          42
+        ]
+      ],
+      [
+        "C1",
+        "P1",
+        "C1",
+        "greedy",
+        [
+          42
+        ]
+      ]
+    ],
+    "exp3_decoding": [
+      [
+        "D0_greedy",
+        "P1",
+        "C0",
+        "greedy",
+        [
+          42,
+          43
+        ]
+      ],
+      [
+        "D1_sampling",
+        "P1",
+        "C0",
+        "sampling",
+        [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      ]
+    ],
+    "exp4_fewshot": [
+      [
+        "F0_zeroshot",
+        "P1",
+        "C0",
+        "greedy",
+        [
+          42
+        ]
+      ],
+      [
+        "F1_fewshot",
+        "F1",
+        "C0",
+        "greedy",
+        [
+          42
+        ]
+      ]
+    ]
+  },
+  "casos": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "C08",
+    "C09",
+    "C10"
+  ],
+  "sha256_casos": "ccb2e386130076fa98ec42963bddba578bc55709ff5a6da15e3a403994715cb9",
+  "sha256_schema": "e15e25e8ac85a3a21d3f1125e5352e1f3bb0e551644db5973f12e8f02da7238c",
+  "sha256_prompts": {
+    "C0_contexto_base.txt": "0d17f1b54dcfaf3beb71f021581584e38d502cc2d0a2fb87843600a90ca1d1b3",
+    "C1_contexto_conflictivo.txt": "5d9bbb47e43954a02729e616908ee484044045c79b56fb26d36fce32e2fba6f4",
+    "F1_fewshot.txt": "b1fd0660688802625c3d467c083a82a8ab2a42a24abbfd3c6245290add325a32",
+    "P0_baseline.txt": "9c2f15990f10874d68f5f33f79a50930e0a8145d10e4487af54c5cdf7ec572ba",
+    "P1_mejorado.txt": "2f96d94c0cc2feadf2fe6dcbccf16e203c5188817c7c8982fe3beb1a4c94f188",
+    "system.txt": "07077bb5e99150c4e19f2aa710e7b639a937746aaf7e1e0609ac6235751686e4"
+  }
+}

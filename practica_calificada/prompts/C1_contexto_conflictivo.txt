@@ -1,0 +1,10 @@
+Entidad: {entidad}
+Procedimiento: {procedimiento} ({nomenclatura})
+Categoría: {categoria}
+Clasificación CUBSO del ítem: {cubso}
+Valor referencial: {valor_referencial}
+Fecha de convocatoria: {fecha}
+Resultado registrado en OCDS:
+- Número de postores: {n_postores}
+- Buena pro otorgada a: {ganador}
+- Monto adjudicado: {monto_adjudicado}

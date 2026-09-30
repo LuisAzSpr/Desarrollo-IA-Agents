@@ -1,0 +1,64 @@
+# Perfil de los datos OCDS (SEACE)
+
+Fuente: `C:\Users\USUARIO\Downloads\PC1-Topicos\claudego\2026`
+
+## Integridad del esquema
+
+| Tabla | Filas | PK | PK única | FK -> referencia (cobertura) |
+|---|---:|---|---|---|
+| main | 122,556 | id | True | - |
+| sources | 122,556 | - | - | main_id -> main(id) (100.0%) |
+| parties | 1,342,738 | main_id, id | True | main_id -> main(id) (100.0%) |
+| parties_additionalIdentifiers | 122,560 | - | - | main_id, parties_id -> parties(main_id, id) (100.0%) |
+| tender_documents | 638,350 | main_id, id | True | main_id -> main(id) (100.0%) |
+| tender_items | 151,854 | main_id, id | True | main_id -> main(id) (100.0%) |
+| tender_items_additionalClassifications | 131,400 | - | - | main_id, tender_items_id -> tender_items(main_id, id) (100.0%) |
+| tender_items_totalValue_exchangeRates | 4,028 | - | - | main_id, tender_items_id -> tender_items(main_id, id) (100.0%) |
+| tender_tenderers | 1,220,176 | main_id, id | True | main_id -> main(id) (100.0%)<br>main_id, id -> parties(main_id, id) (100.0%) |
+| awards | 104,608 | main_id, id | True | main_id -> main(id) (100.0%) |
+| awards_suppliers | 104,130 | - | - | main_id, awards_id -> awards(main_id, id) (100.0%)<br>main_id, id -> parties(main_id, id) (99.8%) |
+| awards_items | 115,749 | - | - | main_id, awards_id -> awards(main_id, id) (100.0%) |
+| awards_items_additionalClassifications | 99,776 | - | - | main_id, awards_id -> awards(main_id, id) (100.0%) |
+| awards_items_totalValue_exchangeRates | 2,711 | - | - | main_id, awards_id -> awards(main_id, id) (100.0%) |
+| awards_value_exchangeRates | 1,973 | - | - | main_id, awards_id -> awards(main_id, id) (100.0%) |
+| contracts | 95,082 | main_id, id | True | main_id -> main(id) (100.0%)<br>main_id, awardID -> awards(main_id, id) (94.2%) |
+| contracts_documents | 201,006 | - | - | main_id, contracts_id -> contracts(main_id, id) (100.0%) |
+| contracts_items | 102,415 | - | - | main_id, contracts_id -> contracts(main_id, id) (100.0%) |
+| contracts_items_additionalClassifications | 90,615 | - | - | main_id, contracts_id -> contracts(main_id, id) (100.0%) |
+| contracts_items_totalValue_exchangeRates | 1,499 | - | - | main_id, contracts_id -> contracts(main_id, id) (100.0%) |
+| contracts_value_exchangeRates | 1,444 | - | - | main_id, contracts_id -> contracts(main_id, id) (100.0%) |
+
+## Negocio
+
+- **procesos**: 122556
+- **entidades**: 2968
+- **convocatorias_desde**: "2013-11-11"
+- **convocatorias_hasta**: "2026-09-03"
+- **procesos_2025_2026**: 70458
+- **por_categoria**: {"services": 54972, "goods": 51147, "works": 16437}
+- **valor_referencial_pen_por_categoria**: {"goods": 31535998024.0, "services": 61443547536.0, "works": 127191518776.0}
+- **top_procedimientos**: {"Licitación Pública Abreviada": 19862, "Concurso Público Abreviado": 17504, "Adjudicación Simplificada": 14569, "Adjudicación de Menor Cuantía": 14023, "Subasta Inversa Electrónica": 10479, "Licitación Pública": 8625, "Adjudicación Directa Selectiva": 8254, "Contratación Directa": 5739, "Comparación de Precios": 5092, "Concurso Público de Servicios": 3400}
+- **top_entidades**: {"SEGURO SOCIAL DE  SALUD": 2940, "EJERCITO PERUANO": 1641, "GOBIERNO REGIONAL DE PUNO SEDE CENTRAL": 1348, "ORGANISMO DE EVALUACION Y FISCALIZACION AMBIENTAL": 1340, "PETROLEOS DEL PERU S.A.": 1205, "MUNICIPALIDAD DISTRITAL DE SAN MARCOS": 997, "COMISION DE PROMOCION DEL PERU PARA LA EXPORTACION Y EL TURISMO - PROMPERU": 990, "PROGRAMA DE DESARROLLO PRODUCTIVO AGRARIO RURAL - AGRO RURAL": 986, "GOBIERNO REGIONAL DE CUSCO SEDE CENTRAL": 924, "GOBIERNO REGIONAL DE AYACUCHO SEDE CENTRAL": 856}
+- **documentos_por_tipo**: {"Bases Administrativas": 124988, "Documentos de Otorgamiento de Buena Pro": 112493, "Documentos de Presentación de Propuestas": 93257, "Documentos de Calificación y Evaluación": 78468, "Bases Integradas": 77763, "Pliego de absolución de consultas y observaciones": 51894, "Resumen ejecutivo": 47266, "Acta de no formulación de consultas y observaciones": 25527, "Informe que sustenta la declaratoria de Desierto": 11869}
+- **procesos_con_bases_administrativas**: 0.9999
+- **procesos_con_bases_integradas**: 0.6139
+- **procesos_con_pliego_absolucion**: 0.4164
+- **postores_con_dato**: 111766
+- **postores_mediana**: 6.0
+- **postores_distribucion**: {"1": 19369, "2": 9678, "3": 11901, "4-5": 12537, "6-10": 20893, "11-20": 21448, "21+": 15940}
+- **tasa_postor_unico_con_dato**: 0.1733
+- **tasa_postor_unico_adjudicados**: 0.1802
+- **postor_unico_por_metodo**: [{"tender_procurementMethodDetails": "Licitación Pública Abreviada", "n": 14042, "postor_unico": 0.0244}, {"tender_procurementMethodDetails": "Adjudicación Simplificada", "n": 12590, "postor_unico": 0.0384}, {"tender_procurementMethodDetails": "Concurso Público Abreviado", "n": 12018, "postor_unico": 0.0128}, {"tender_procurementMethodDetails": "Adjudicación de Menor Cuantía", "n": 10708, "postor_unico": 0.4368}, {"tender_procurementMethodDetails": "Subasta Inversa Electrónica", "n": 8134, "postor_unico": 0.0022}, {"tender_procurementMethodDetails": "Adjudicación Directa Selectiva", "n": 6614, "postor_unico": 0.2047}, {"tender_procurementMethodDetails": "Licitación Pública", "n": 6145, "postor_unico": 0.013}, {"tender_procurementMethodDetails": "Contratación Directa", "n": 5269, "postor_unico": 0.8766}, {"tender_procurementMethodDetails": "Comparación de Precios", "n": 4024, "postor_unico": 0.006}, {"tender_procurementMethodDetails": "Concurso Público", "n": 2810, "postor_unico": 0.0181}]
+- **postor_unico_por_categoria**: [{"tender_mainProcurementCategory": "goods", "n": 39460, "postor_unico": 0.139}, {"tender_mainProcurementCategory": "services", "n": 42285, "postor_unico": 0.2589}, {"tender_mainProcurementCategory": "works", "n": 12531, "postor_unico": 0.0447}]
+- **n_numberOfTenderers_igual_conteo_tenderers**: 0.9851
+- **procesos_adjudicados**: 94348
+- **adjudicaciones**: 104608
+- **contratos**: 95082
+- **proveedores_distintos_que_participaron**: 169725
+- **proveedores_distintos_ganadores**: 57630
+- **ganador_figura_entre_postores**: 0.9975
+- **top_participantes**: [{"ruc": "PE-RUC-20541777980", "nombre": "GRUPO 3A CONSULTORIA & CONSTRUCCIONES S.A.C.", "procesos": 4421}, {"ruc": "PE-RUC-20605753907", "nombre": "INVERSIONES GENERALES LAURA ROCA S.A.C.", "procesos": 3417}, {"ruc": "PE-RUC-20613035398", "nombre": "OCAMPER S.A.C.", "procesos": 3232}, {"ruc": "PE-RUC-20569118124", "nombre": "JATUN SACHA E.I.R.L", "procesos": 3157}, {"ruc": "PE-RUC-20611499591", "nombre": "TVT QONTRATISTAS E.I.R.L.", "procesos": 3005}, {"ruc": "PE-RUC-20542513439", "nombre": "CRISAMYR SOCIEDAD ANONIMA CERRADA", "procesos": 2916}, {"ruc": "PE-RUC-20601505828", "nombre": "CORPORACION LUMAYJE S.A.C.", "procesos": 2875}, {"ruc": "PE-RUC-20613921002", "nombre": "C.L.D. CONTRATISTAS GENERALES S.A.C.", "procesos": 2833}, {"ruc": "PE-RUC-20489665604", "nombre": "H& G ZAFIRO SOCIEDAD ANONIMA CERRADA", "procesos": 2753}, {"ruc": "PE-RUC-20603089236", "nombre": "GAROTH GRUPO EMPRESARIAL SOCIEDAD ANONIMA CERRADA", "procesos": 2596}]
+- **top_ganadores_por_procesos**: [{"ruc": "PE-RUC-20511037001", "nombre": "GRUPO SANTA FE SOCIEDAD ANONIMA CERRADA - GRUPO SANTA FE S.A.C.", "procesos": 588}, {"ruc": "PE-RUC-20501887286", "nombre": "DIAGNOSTICA PERUANA S.A.C.", "procesos": 223}, {"ruc": "PE-RUC-20467534026", "nombre": "AMERICA MOVIL PERU S.A.C.", "procesos": 218}, {"ruc": "PE-RUC-20418896915", "nombre": "MAPFRE PERU COMPAÑIA DE SEGUROS Y REASEGUROS", "procesos": 176}, {"ruc": "PE-RUC-20347268683", "nombre": "LABORATORIOS AC FARMA S.A.", "procesos": 175}, {"ruc": "PE-RUC-20377339461", "nombre": "B.BRAUN MEDICAL PERU S.A.", "procesos": 156}, {"ruc": "PE-RUC-20100287791", "nombre": "INSTITUTO QUIMIOTERAPICO S A", "procesos": 110}, {"ruc": "PE-RUC-20100210909", "nombre": "LA POSITIVA SEGUROS Y REASEGUROS S.A.", "procesos": 109}, {"ruc": "PE-RUC-20100017491", "nombre": "TELEFONICA DEL PERU SAA", "procesos": 103}, {"ruc": "PE-RUC-20100041953", "nombre": "RIMAC SEGUROS Y REASEGUROS", "procesos": 102}]
+- **top_ganadores_por_monto_pen**: [{"ruc": "PE-RUC-20602979173", "nombre": "SINOHYDRO CORPORATION LIMITED, SUCURSAL DEL PERU", "monto": 1421054566.0}, {"ruc": "PE-RUC-20543254798", "nombre": "VIETTEL  PERU  S.A.C.", "monto": 1230519017.0}, {"ruc": "PE-RUC-20100362598", "nombre": "SERVICIOS INTEGRADOS DE LIMPIEZA SA (SIL SA)", "monto": 1212931338.0}, {"ruc": "PE-RUC-451083", "nombre": "Consorcio San Miguel, integrado por: 2H Ingeniería y Construcción SAC, China Machinery Engineering Corporation y Sigma S.A. Contratistas Generales", "monto": 1169135441.0}, {"ruc": "PE-RUC-20604269009", "nombre": "CHINA CIVIL ENGINEERING CONSTRUCTION CORPORATION SUCURSAL DEL PERU", "monto": 1116036195.0}, {"ruc": "PE-RUC-20602371442", "nombre": "CHINA GEZHOUBA GROUP COMPANY LIMITED SUCURSAL PERU", "monto": 1076325071.0}, {"ruc": "PE-RUC-20600977661", "nombre": "CHINA RAILWAY TUNNEL GROUP CO., LTD SUCURSAL DEL PERU", "monto": 906539295.0}, {"ruc": "PE-RUC-1652147", "nombre": "CONSORCIO LIMA NORTE", "monto": 806093923.0}, {"ruc": "PE-RUC-20100995108", "nombre": "CONSTRUCTORA M.P.M. S.A.", "monto": 651314014.0}, {"ruc": "PE-RUC-1686546", "nombre": "CONSORCIO VIAL SAMA", "monto": 608578825.0}]
+- **ratio_adjudicado_referencial**: {"n": 91693, "mediana": 0.9962, "p_entre_0.99_y_1.00": 0.4808, "p_mayor_1": 0.0647}
+- **estado_items**: {"CONTRATADO": 0.6298, "DESIERTO": 0.1306, "CONVOCADO": 0.0748, "CONSENTIDO": 0.0696, "NULO": 0.0465, "ADJUDICADO": 0.0171, "CANCELADO": 0.0127, "RETROTRAIDO_POR_RESOLUCION": 0.0123}

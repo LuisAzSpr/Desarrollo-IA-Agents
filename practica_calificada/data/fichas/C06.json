@@ -1,0 +1,84 @@
+{
+  "ocid": "ocds-dgv273-seacev3-1183945",
+  "entidad": "GOBIERNO REGIONAL DE CAJAMARCA-HOSPITAL GENERAL DE JAEN",
+  "entidad_id": "PE-CONSUCODE-200051",
+  "procedimiento": "Contratación Directa",
+  "nomenclatura": "DIRECTA-DIRECTA-8-2025-HGJ-1",
+  "categoria": "goods",
+  "objeto": "ADQUISICIÓN ANUAL DE REACTIVOS PARA TAMIZAJE POR QUIMIOLUMINISCENCIA EN EQUIPO PROPIO MINDRAY MODELO CL2000i, PARA EL SERVICIO DE BANCO DE SANGRE DEL HOSPITAL GENERAL DE JAÉN",
+  "fecha_convocatoria": "2025-12-31T19:13:00-05:00",
+  "valor_referencial_pen": 358500.0,
+  "n_postores_ocds": 1.0,
+  "bases_y_documentos": [
+    {
+      "title": "Bases Administrativas",
+      "documentType": "biddingDocuments",
+      "format": "pdf",
+      "datePublished": "2025-12-31T19:13:00-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=8ba45fe5-54f2-496c-bd5f-9c8ae7bd1cd1"
+    },
+    {
+      "title": "Documentos de Presentación de Propuestas",
+      "documentType": "biddingDocuments",
+      "format": "zip",
+      "datePublished": "2026-01-13T16:59:02-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=c1327648-61e0-43b3-aa12-7b98e9eef247"
+    },
+    {
+      "title": "Documentos de Otorgamiento de Buena Pro",
+      "documentType": "awardNotice",
+      "format": "zip",
+      "datePublished": "2026-01-13T16:59:02-05:00",
+      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=fed72a3f-d97c-4844-81b9-bb4f18d6e9fe"
+    }
+  ],
+  "items": [
+    {
+      "id": 21192556,
+      "description": "ADQUISICIÓN ANUAL DE REACTIVOS PARA TAMIZAJE POR QUIMIOLUMINISCENCIA EN EQUIPO PROPIO MINDRAY MODELO CL2000i, PARA EL SERVICIO DE BANCO DE SANGRE DEL HOSPITAL GENERAL DE JAÉN",
+      "quantity": 1.0,
+      "unit_name": "Unidad",
+      "totalValue_amount": 358500.0,
+      "totalValue_currency": "PEN",
+      "classification_description": NaN,
+      "statusDetails": "CONTRATADO"
+    }
+  ],
+  "postores": [
+    {
+      "id": "PE-RUC-20553853355",
+      "name": "SIMED PERU S.A.C."
+    }
+  ],
+  "adjudicaciones": [
+    {
+      "id_award": "1183945-20553853355",
+      "date": "2026-01-13T00:00:00-05:00",
+      "value_amount": 358500.0,
+      "value_currency": "PEN",
+      "awards_id": "1183945-20553853355",
+      "id_proveedor": "PE-RUC-20553853355",
+      "name": "SIMED PERU S.A.C."
+    }
+  ],
+  "items_adjudicados": [
+    {
+      "awards_id": "1183945-20553853355",
+      "description": "ADQUISICIÓN ANUAL DE REACTIVOS PARA TAMIZAJE POR QUIMIOLUMINISCENCIA EN EQUIPO PROPIO MINDRAY MODELO CL2000i, PARA EL SERVICIO DE BANCO DE SANGRE DEL HOSPITAL GENERAL DE JAÉN",
+      "quantity": 1.0,
+      "totalValue_amount": 358500.0,
+      "totalValue_currency": "PEN",
+      "statusDetails": "CONTRATADO"
+    }
+  ],
+  "contratos": [
+    {
+      "id": 2374808,
+      "awardID": "1183945-20553853355",
+      "dateSigned": "2026-01-30T00:00:00-05:00",
+      "value_amount": 358500.0,
+      "value_currency": "PEN",
+      "statusDetails": NaN
+    }
+  ]
+}

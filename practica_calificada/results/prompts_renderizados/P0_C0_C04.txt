@@ -1,0 +1,22 @@
+<<system>>
+Eres un analista de contrataciones públicas del Perú. Evalúas si el texto de un requerimiento podría estar direccionado hacia un proveedor, marca o producto específico. Respondes únicamente con un objeto JSON válido.
+
+<<user>>
+TAREA
+Clasifica el riesgo de direccionamiento del REQUERIMIENTO.
+
+REQUERIMIENTO
+Contratación del Servicio de Suscripción de Licencias de Software de Colaboración y Mensajería Electrónica en la Nube Microsoft Office 365 o equivalente para el FONDEPES
+
+CONTEXTO DEL PROCESO
+Entidad: FONDO NACIONAL DE DESARROLLO PESQUERO
+Procedimiento: Concurso Público Abreviado (CP-ABR-12-2025-FONDEPES-1)
+Categoría: servicios
+Clasificación CUBSO del ítem: SERVICIO DE CORREO ELECTRONICO Y HERRAMIENTAS DE COLABORACION EN LA NUBE
+Valor referencial: S/ 291,338.54
+Fecha de convocatoria: 2025-12-18
+
+FORMATO DE SALIDA
+Devuelve solo un objeto JSON con exactamente estas claves:
+{"riesgo": "alto|medio|bajo", "senal": "marca_sin_equivalente|marca_con_equivalente|compatibilidad_equipo_existente|ninguna", "evidencia": "<fragmento copiado literalmente del REQUERIMIENTO, o cadena vacía si no hay señal>", "confianza": <número entre 0 y 1>, "justificacion": "<una oración breve>"}
+No escribas nada fuera del JSON.

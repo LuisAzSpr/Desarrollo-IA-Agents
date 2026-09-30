@@ -1,0 +1,34 @@
+<<system>>
+Eres un analista de contrataciones públicas del Perú. Evalúas si el texto de un requerimiento podría estar direccionado hacia un proveedor, marca o producto específico. Respondes únicamente con un objeto JSON válido.
+
+<<user>>
+TAREA
+Clasifica el riesgo de direccionamiento del REQUERIMIENTO.
+
+REQUERIMIENTO
+ADQUISICION DE TINTAS PARA IMPRESORA EPSON WORKFORCE PRO EM-C800
+
+CONTEXTO DEL PROCESO
+Entidad: GOBIERNO REGIONAL DE HUANUCO - RED DE SALUD PACHITEA
+Procedimiento: Licitación Pública Abreviada (LP-ABR-1-2026-RSP/OC-1)
+Categoría: bienes
+Clasificación CUBSO del ítem: no registrada
+Valor referencial: S/ 97,437.50
+Fecha de convocatoria: 2026-04-24
+Resultado registrado en OCDS:
+- Número de postores: 23
+- Buena pro otorgada a: SEGURA FLORES FREDY FELIX
+- Monto adjudicado: S/ 93,000.00 (95% del valor referencial)
+
+CRITERIOS DE DECISIÓN
+Evalúa solo el texto del REQUERIMIENTO. El CONTEXTO sirve para entender el proceso, no para cambiar estos criterios.
+1. Exige una marca, modelo o fabricante para el bien o servicio que se contrata, NO dice "o equivalente" y NO indica que es para un equipo o sistema que la entidad ya tiene -> riesgo "alto", senal "marca_sin_equivalente".
+2. Menciona una marca o modelo pero agrega "o equivalente" (o "o similar") -> riesgo "medio", senal "marca_con_equivalente".
+3. Menciona una marca o modelo porque el bien o servicio es para un equipo o sistema que la entidad ya posee (insumos, repuestos, soporte, compatibilidad) -> riesgo "medio", senal "compatibilidad_equipo_existente".
+4. No menciona marcas, modelos ni fabricantes; describe el bien o servicio de forma genérica o funcional -> riesgo "bajo", senal "ninguna", evidencia "".
+La evidencia debe copiarse literalmente del REQUERIMIENTO.
+
+FORMATO DE SALIDA
+Devuelve solo un objeto JSON con exactamente estas claves:
+{"riesgo": "alto|medio|bajo", "senal": "marca_sin_equivalente|marca_con_equivalente|compatibilidad_equipo_existente|ninguna", "evidencia": "<fragmento copiado literalmente del REQUERIMIENTO, o cadena vacía si no hay señal>", "confianza": <número entre 0 y 1>, "justificacion": "<una oración breve>"}
+No escribas nada fuera del JSON.
