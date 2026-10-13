@@ -9,7 +9,7 @@ venv/
 env/
 ENV/
 .conda/
-.idea/
+
 # Python
 __pycache__/
 *.py[cod]

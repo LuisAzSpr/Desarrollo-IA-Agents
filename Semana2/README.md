@@ -52,11 +52,7 @@ Al finalizar la semana debes poder:
 |---|---|
 | [`Cuaderno2-CC-0F4.ipynb`](Cuaderno2-CC-0F4.ipynb) | Material canónico del lunes: logits, softmax, decoding, autoregresión, contexto y KV cache |
 | [`Laboratorio2-CC-0F4.ipynb`](Laboratorio2-CC-0F4.ipynb) | Laboratorio experimental del jueves |
-| [`Exposiciones2-CC-0F4.md`](Exposiciones2-CC-0F4.md) | Guía de búsqueda académica y exposiciones de refuerzo |
 
-Las exposiciones de Semana 2 son de **refuerzo**. No sustituyen la evaluación E1 de Semana 3.
-
-No hay una lectura adicional obligatoria para toda la clase en esta semana. Cada grupo consulta la fuente primaria correspondiente a su tema de exposición.
 
 #### Experimento A - Decoding
 
@@ -155,41 +151,6 @@ El laboratorio reporta tanto GB decimal como GiB binario y declara la fórmula u
 
 **Advertencia:** Attention AI Lab es un estimador didáctico. Una reducción de memoria lógica estimada no demuestra por sí sola menor latencia real, mayor throughput ni menor memoria pico física de GPU.
 
-#### Exposiciones de refuerzo
-
-Los temas base son:
-
-1. FlashAttention.
-2. Multi-Query Attention y Grouped-Query Attention.
-3. Multi-Head Latent Attention.
-4. Sliding Window Attention y contexto largo.
-
-Si existen más grupos se pueden utilizar:
-
-5. PagedAttention.
-6. Speculative Decoding.
-
-Cada exposición debe partir de una fuente primaria y usar **dos herramientas con funciones distintas**.
-
-Por ejemplo:
-
-```text
-descubrimiento/síntesis
-Elicit/SciSpace/Consensus
-
-exploración de red
-ResearchRabbit/Connected Papers
-
-contraste de citas
-Scite
-```
-
-No es obligatorio utilizar todas las herramientas.
-
-La salida de una herramienta de IA no se considera evidencia primaria.
-
-Consulta [`Exposiciones2-CC-0F4.md`](Exposiciones2-CC-0F4.md).
-
 #### Estándar experimental
 
 Todo experimento debe poder expresarse como:
@@ -253,5 +214,5 @@ indicando qué representa cada término y bajo qué supuestos la expresión es v
 La evidencia mínima de cierre es:
 
 ```text
-decoding implementado + Experimento A + estimación de KV cache + Experimento B + exposición de refuerzo
+decoding implementado + Experimento A + estimación de KV cache + Experimento B
 ```

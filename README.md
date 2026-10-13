@@ -7,11 +7,11 @@ Este curso estudia cómo diseñar, implementar y evaluar sistemas de inteligenci
 El énfasis está en comprender los componentes, experimentar, medir resultados, analizar errores y defender decisiones técnicas.
 
 > **Lenguaje principal:** Python 3.x  
-> **Entorno:** Jupyter Notebook/JupyterLab  
+> **Entorno:** Imágenes docker,Jupyter Notebook/JupyterLab
 > **Periodo:** 2026-2  
 > **Créditos:** 4  
 > **Horas semanales:** 6 horas  
-> **Teoría:** lunes de 6:00 p. m. a 8:00 p. m.  
+> **Teoría:** miércoles de 6:00 p. m. a 8:00 p. m.  
 > **Laboratorio:** jueves de 4:00 p. m. a 8:00 p. m.
 
 #### Descripción del curso
@@ -40,7 +40,7 @@ Durante la primera semana se realizará una **prueba diagnóstica de entrada** s
 
 El curso combina teoría, implementación, experimentación, exposiciones técnicas y defensa oral.
 
-Los lunes se desarrollan los fundamentos. Los jueves se realizan laboratorios, experimentos, exposiciones y discusión de resultados.
+Los miércoles se desarrollan los fundamentos. Los jueves se realizan laboratorios, experimentos, exposiciones y discusión de resultados.
 
 Toda actividad experimental deberá identificar, cuando corresponda, baseline, modificación, métrica, resultado, errores y conclusión.
 

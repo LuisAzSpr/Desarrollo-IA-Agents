@@ -1018,7 +1018,7 @@ Un smoke test demuestra que el software ejecuta. No demuestra por sí solo la co
 
 #### Regla para el resto del semestre
 
-Al crear `Semana5`, `Semana6`, ..., `Semana16/` se agregan materiales académicos.
+Al crear `Semana5/`, `Semana6/`, ..., `Semana16/` se agregan materiales académicos.
 
 No se agregan:
 
