@@ -1,0 +1,21 @@
+condicion,query_id,afirmacion,estado,pasaje,cita_correcta,nota
+closed_book,Q01,La entidad que compro switches y access points Cisco sin equivalentes es el MTC,contradicha,E01-P02,-,Fue la Agencia de Compras de las FF.AA.
+rag_C,Q01,La Agencia de Compras de las FF.AA. compro switches y access points de la marca Cisco,sustentada,E01-P02,si,
+rag_C,Q01,La exigencia de marca no aceptaba equivalentes,sustentada,E01-P02,si,El item no dice 'o equivalente'.
+rag_C,Q02,El Despacho Presidencial aceptaba switches equivalentes a Cisco Catalyst,sustentada,E17-P02,si,Tambien E17-P01.
+rag_C,Q04,XENTIC S.A.C gano la suscripcion de Adobe Creative Cloud del INGEMMET,sustentada,E43-P06,no,Cito E43-P05.
+rag_C,Q04,"El monto fue S/ 50,106.82",sustentada,E43-P06,no,Cito E43-P05.
+rag_C,Q06,El toner 006R01830 se compro en RES-PROC-161-2025-RE-1 del Ministerio de Relaciones Exteriores,sustentada,E49-P05,si,El proceso y la entidad estan en el encabezado del pasaje.
+rag_C,Q06,Es el item 4,sustentada,E49-P05,si,
+rag_C,Q09,El asistente lo contrato el RENIEC,sustentada,E41-P01,si,
+rag_C,Q09,La marca es AIVO,sustentada,E41-P02,si,Tambien E41-P01.
+rag_C,Q10,SISTEMAS ORACLE DEL PERU S.R.L gano el soporte de servidores Oracle de la SBS,sustentada,E03-P06,si,
+rag_C,Q10,"El monto fue S/ 786,623.79",sustentada,E03-P06,si,
+rag_C,Q12,SIEMENS HEALTHCARE S.A.C fue el unico postor,sustentada,E50-P05,no,Cito E50-P01.
+rag_C,Q14,No se llego a adjudicar la compra de computadoras Mac del MINEM,sustentada,E19-P06,si,
+rag_C,Q15,La APN no aceptaba un producto equivalente a AutoCAD,contradicha,E36-P01,-,E36-P01 dice 'o equivalente'; solo el item E36-P02 lo omite.
+rag_C,Q15,Lo solicitado era AutoCAD en su ultima version o equivalente,sustentada,E36-P01,si,
+rag_C,Q15,El monto adjudicado fue el 79 % del valor referencial,sustentada,E36-P06,si,No se preguntaba.
+rag_C,Q17,Se adjudico el 47 % del valor referencial en Office 365 del FONDEPES,sustentada,E37-P06,si,
+rag_C,Q21,"El Tribunal de Contrataciones impuso a MC INNOVATEC una sancion de S/ 184,500.00",no_sustentada,,-,"E01-P06 dice buena pro por ese monto, no sancion."
+rag_C,Q22,El plazo de entrega de los switches fue de 30 dias,no_sustentada,,-,Ningun pasaje del contexto lo dice.

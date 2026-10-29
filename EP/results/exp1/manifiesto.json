@@ -1,0 +1,118 @@
+{
+  "experimento": 1,
+  "benchmark_congelado": {
+    "congelado_en": "2026-10-22T00:17:08-05:00",
+    "nota": "benchmark fijado antes de correr los experimentos 1 y 2",
+    "sha256": {
+      "corpus.jsonl": "480646008150ffdeb666ce2e910b930128909f8d1419f9af4238a3f3a7e2adbe",
+      "consultas.jsonl": "12521cbc3bb43e0c51aebdaf609b46bb700a8cb6849a30a29846556442cd00b4",
+      "qrels.json": "d02b682f35221f0d186a19106a20fd8b1eba65d357e982c10a15aa1bcdaf8c7f",
+      "referencias.jsonl": "2b53d9ad905df664527a0abca002d79203f4abefb35e3e7b69672139037726c5"
+    }
+  },
+  "config": {
+    "unidad": "pasaje + encabezado del proceso",
+    "n_unidades": 426,
+    "n_chunks_pc2": 86,
+    "candidate_depth": 20,
+    "rrf_constant": 60,
+    "bm25": {
+      "k1": 1.5,
+      "b": 0.75,
+      "epsilon": 0.25
+    },
+    "encoder": [
+      "intfloat/multilingual-e5-small",
+      "614241f622f53c4eeff9890bdc4f31cfecc418b3"
+    ],
+    "reranker": [
+      "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+      "1427fd652930e4ba29e8149678df786c240d8825"
+    ],
+    "pc2_target_words": 180,
+    "pc2_overlap": 1,
+    "max_tokens_par_reranker": 285,
+    "seed": 42
+  },
+  "versiones": {
+    "python": "3.10.11",
+    "faiss": "1.15.1",
+    "rank_bm25": "0.2.2",
+    "sentence_transformers": "5.1.2",
+    "transformers": "4.57.1",
+    "torch": "2.9.0+cpu"
+  },
+  "maquina": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+  "resumen": [
+    {
+      "condicion": "A0",
+      "recall@1": 0.2,
+      "recall@3": 0.545,
+      "recall@5": 0.74,
+      "mrr": 0.5326,
+      "ndcg@5": 0.5669
+    },
+    {
+      "condicion": "A",
+      "recall@1": 0.4,
+      "recall@3": 0.72,
+      "recall@5": 0.88,
+      "mrr": 0.7117,
+      "ndcg@5": 0.7168
+    },
+    {
+      "condicion": "B",
+      "recall@1": 0.41,
+      "recall@3": 0.745,
+      "recall@5": 0.94,
+      "mrr": 0.7308,
+      "ndcg@5": 0.7653
+    },
+    {
+      "condicion": "C",
+      "recall@1": 0.61,
+      "recall@3": 0.88,
+      "recall@5": 0.9,
+      "mrr": 0.875,
+      "ndcg@5": 0.8622
+    }
+  ],
+  "latencia": [
+    {
+      "condicion": "A0",
+      "dense_ms": 25.11,
+      "bm25_ms": 0.0,
+      "rrf_ms": 0.0,
+      "reranker_ms": 0.0,
+      "total_ms": 25.12,
+      "total_p95_ms": 30.78
+    },
+    {
+      "condicion": "A",
+      "dense_ms": 22.19,
+      "bm25_ms": 0.0,
+      "rrf_ms": 0.0,
+      "reranker_ms": 0.0,
+      "total_ms": 22.2,
+      "total_p95_ms": 24.01
+    },
+    {
+      "condicion": "B",
+      "dense_ms": 22.33,
+      "bm25_ms": 0.97,
+      "rrf_ms": 0.05,
+      "reranker_ms": 0.0,
+      "total_ms": 23.35,
+      "total_p95_ms": 25.83
+    },
+    {
+      "condicion": "C",
+      "dense_ms": 21.94,
+      "bm25_ms": 0.95,
+      "rrf_ms": 0.05,
+      "reranker_ms": 1042.73,
+      "total_ms": 1065.69,
+      "total_p95_ms": 2010.76
+    }
+  ]
+}

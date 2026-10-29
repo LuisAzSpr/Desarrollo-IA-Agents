@@ -1,0 +1,28 @@
+============================= test session starts =============================
+platform win32 -- Python 3.10.11, pytest-8.4.2, pluggy-1.7.0 -- C:\Program Files\Python310\python.exe
+rootdir: C:\Users\USUARIO\Downloads\Tópicos de Ciencia de la Computación I\CC-0F4\cc0f4-pc1-requisitos-direccionados
+plugins: anyio-4.11.0, langsmith-0.4.39
+collecting ... collected 22 items
+EP/tests/test_herramienta.py::test_valido_cumple_contrato_de_salida PASSED [  4%]
+EP/tests/test_herramienta.py::test_valido_unico_postor_y_ratio PASSED    [  9%]
+EP/tests/test_herramienta.py::test_entrada_invalida[args0] PASSED        [ 13%]
+EP/tests/test_herramienta.py::test_entrada_invalida[args1] PASSED        [ 18%]
+EP/tests/test_herramienta.py::test_entrada_invalida[args2] PASSED        [ 22%]
+EP/tests/test_herramienta.py::test_entrada_invalida[args3] PASSED        [ 27%]
+EP/tests/test_herramienta.py::test_entrada_invalida[args4] PASSED        [ 31%]
+EP/tests/test_herramienta.py::test_error_de_dominio_no_se_reintenta[args0-proceso_no_encontrado] PASSED [ 36%]
+EP/tests/test_herramienta.py::test_error_de_dominio_no_se_reintenta[args1-item_no_pertenece] PASSED [ 40%]
+EP/tests/test_herramienta.py::test_error_de_dominio_no_se_reintenta[args2-item_requerido] PASSED [ 45%]
+EP/tests/test_herramienta.py::test_transitorio_una_vez_se_recupera_con_reintento PASSED [ 50%]
+EP/tests/test_herramienta.py::test_transitorio_sin_reintento_falla PASSED [ 54%]
+EP/tests/test_herramienta.py::test_transitorio_persistente_se_corta_en_max_intentos PASSED [ 59%]
+EP/tests/test_herramienta.py::test_lento_una_vez_timeout_y_luego_ok PASSED [ 63%]
+EP/tests/test_herramienta.py::test_lento_siempre_respeta_el_deadline PASSED [ 68%]
+EP/tests/test_herramienta.py::test_error_interno_no_se_reintenta PASSED  [ 72%]
+EP/tests/test_herramienta.py::test_salida_mal_formada_se_bloquea PASSED  [ 77%]
+EP/tests/test_herramienta.py::test_sin_contratos_la_salida_mala_pasa PASSED [ 81%]
+EP/tests/test_herramienta.py::test_reintento_ingenuo_repite_errores_de_dominio PASSED [ 86%]
+EP/tests/test_herramienta.py::test_debe_reintentar PASSED                [ 90%]
+EP/tests/test_herramienta.py::test_herramienta_desconocida PASSED        [ 95%]
+EP/tests/test_herramienta.py::test_contrato_de_salida_detecta_alertas_incoherentes PASSED [100%]
+============================= 22 passed in 0.76s ==============================

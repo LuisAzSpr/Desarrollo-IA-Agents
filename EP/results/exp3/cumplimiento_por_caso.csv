@@ -1,0 +1,17 @@
+caso,A,B,C,D
+valido_equivalente_solo_en_objeto,True,True,True,True
+valido_unico_postor,True,True,True,True
+valido_adjudicado_sobre_vr,True,True,True,True
+valido_item_de_proceso_con_6_items,True,True,True,True
+invalido_ocid_mal_formado,False,True,True,True
+invalido_item_como_texto,False,True,True,True
+invalido_argumento_extra,False,True,True,True
+dominio_ocid_inexistente,False,True,True,True
+dominio_item_de_otro_proceso,False,True,True,True
+dominio_falta_item_en_proceso_de_104_items,False,True,True,True
+transitorio_una_vez,False,False,True,True
+transitorio_siempre,False,True,True,True
+lento_una_vez,True,True,True,True
+lento_siempre,False,False,True,True
+error_interno,True,True,True,True
+salida_mal_formada,False,True,True,True

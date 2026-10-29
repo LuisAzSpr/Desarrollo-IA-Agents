@@ -1,0 +1,10 @@
+{
+  "congelado_en": "2026-10-22T00:17:08-05:00",
+  "nota": "benchmark fijado antes de correr los experimentos 1 y 2",
+  "sha256": {
+    "corpus.jsonl": "480646008150ffdeb666ce2e910b930128909f8d1419f9af4238a3f3a7e2adbe",
+    "consultas.jsonl": "12521cbc3bb43e0c51aebdaf609b46bb700a8cb6849a30a29846556442cd00b4",
+    "qrels.json": "d02b682f35221f0d186a19106a20fd8b1eba65d357e982c10a15aa1bcdaf8c7f",
+    "referencias.jsonl": "2b53d9ad905df664527a0abca002d79203f4abefb35e3e7b69672139037726c5"
+  }
+}

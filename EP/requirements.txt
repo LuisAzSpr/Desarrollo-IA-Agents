@@ -1,0 +1,14 @@
+# Dependencias del EP (versiones del README, seccion 2; manifiestos de results/)
+# torch en CPU: pip install torch==2.9.0 --index-url https://download.pytorch.org/whl/cpu
+torch==2.9.0
+transformers==4.57.1
+sentence-transformers==5.1.2
+faiss-cpu==1.15.1
+rank-bm25==0.2.2
+pydantic==2.12.3
+pytest==8.4.2
+numpy
+pandas==2.3.3   # pandas 3.1 queda bloqueado por el Control de aplicaciones de Windows en esta maquina
+matplotlib
+python-pptx
+lxml

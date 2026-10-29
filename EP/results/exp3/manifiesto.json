@@ -1,0 +1,212 @@
+{
+  "experimento": 3,
+  "herramienta": "ocds.indicadores_proceso",
+  "politicas": {
+    "A": {
+      "nombre": "A",
+      "validar_entrada": false,
+      "validar_salida": false,
+      "reintento": "no",
+      "usar_timeout": false,
+      "max_intentos": 1,
+      "backoff_ms": [
+        20,
+        40
+      ],
+      "timeout_intento_ms": 100,
+      "deadline_ms": 300
+    },
+    "B": {
+      "nombre": "B",
+      "validar_entrada": true,
+      "validar_salida": true,
+      "reintento": "no",
+      "usar_timeout": false,
+      "max_intentos": 1,
+      "backoff_ms": [
+        20,
+        40
+      ],
+      "timeout_intento_ms": 100,
+      "deadline_ms": 300
+    },
+    "C": {
+      "nombre": "C",
+      "validar_entrada": true,
+      "validar_salida": true,
+      "reintento": "todo",
+      "usar_timeout": true,
+      "max_intentos": 3,
+      "backoff_ms": [
+        20,
+        40
+      ],
+      "timeout_intento_ms": 100,
+      "deadline_ms": 300
+    },
+    "D": {
+      "nombre": "D",
+      "validar_entrada": true,
+      "validar_salida": true,
+      "reintento": "selectivo",
+      "usar_timeout": true,
+      "max_intentos": 3,
+      "backoff_ms": [
+        20,
+        40
+      ],
+      "timeout_intento_ms": 100,
+      "deadline_ms": 300
+    }
+  },
+  "indice_sha256": "474c94b0cc4090b53e2bc7f5ad4e03b405e959cf0572aaac811fb69c768dafb3",
+  "schema_entrada": {
+    "additionalProperties": false,
+    "properties": {
+      "ocid": {
+        "maxLength": 60,
+        "pattern": "^ocds-dgv273-seacev3-\\d+(-\\d+){0,2}$",
+        "title": "Ocid",
+        "type": "string"
+      },
+      "tender_item_id": {
+        "anyOf": [
+          {
+            "minimum": 1,
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Tender Item Id"
+      }
+    },
+    "required": [
+      "ocid"
+    ],
+    "title": "IndicadoresEntrada",
+    "type": "object"
+  },
+  "schema_salida": {
+    "additionalProperties": false,
+    "properties": {
+      "ocid": {
+        "pattern": "^ocds-dgv273-seacev3-\\d+(-\\d+){0,2}$",
+        "title": "Ocid",
+        "type": "string"
+      },
+      "nomenclatura": {
+        "minLength": 1,
+        "title": "Nomenclatura",
+        "type": "string"
+      },
+      "entidad": {
+        "minLength": 1,
+        "title": "Entidad",
+        "type": "string"
+      },
+      "tender_item_id": {
+        "title": "Tender Item Id",
+        "type": "integer"
+      },
+      "item_descripcion": {
+        "minLength": 1,
+        "title": "Item Descripcion",
+        "type": "string"
+      },
+      "n_postores": {
+        "anyOf": [
+          {
+            "minimum": 0,
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "N Postores"
+      },
+      "unico_postor": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Unico Postor"
+      },
+      "ratio_adjudicado_vr": {
+        "anyOf": [
+          {
+            "minimum": 0,
+            "type": "number"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Ratio Adjudicado Vr"
+      },
+      "adjudicado_sobre_vr": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Adjudicado Sobre Vr"
+      },
+      "objeto_dice_equivalente": {
+        "title": "Objeto Dice Equivalente",
+        "type": "boolean"
+      },
+      "item_dice_equivalente": {
+        "title": "Item Dice Equivalente",
+        "type": "boolean"
+      },
+      "alertas": {
+        "items": {
+          "enum": [
+            "unico_postor",
+            "adjudicado_sobre_vr",
+            "equivalente_solo_en_objeto"
+          ],
+          "type": "string"
+        },
+        "title": "Alertas",
+        "type": "array"
+      },
+      "fuente": {
+        "title": "Fuente",
+        "type": "string"
+      }
+    },
+    "required": [
+      "ocid",
+      "nomenclatura",
+      "entidad",
+      "tender_item_id",
+      "item_descripcion",
+      "n_postores",
+      "unico_postor",
+      "ratio_adjudicado_vr",
+      "adjudicado_sobre_vr",
+      "objeto_dice_equivalente",
+      "item_dice_equivalente",
+      "alertas",
+      "fuente"
+    ],
+    "title": "IndicadoresSalida",
+    "type": "object"
+  },
+  "versiones": {
+    "python": "3.10.11",
+    "pydantic": "2.12.3"
+  }
+}

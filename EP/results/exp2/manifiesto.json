@@ -1,0 +1,52 @@
+{
+  "experimento": 2,
+  "benchmark_congelado": {
+    "congelado_en": "2026-10-22T00:17:08-05:00",
+    "nota": "benchmark fijado antes de correr los experimentos 1 y 2",
+    "sha256": {
+      "corpus.jsonl": "480646008150ffdeb666ce2e910b930128909f8d1419f9af4238a3f3a7e2adbe",
+      "consultas.jsonl": "12521cbc3bb43e0c51aebdaf609b46bb700a8cb6849a30a29846556442cd00b4",
+      "qrels.json": "d02b682f35221f0d186a19106a20fd8b1eba65d357e982c10a15aa1bcdaf8c7f",
+      "referencias.jsonl": "2b53d9ad905df664527a0abca002d79203f4abefb35e3e7b69672139037726c5"
+    }
+  },
+  "contexto": {
+    "condicion_exp1": "C",
+    "rag_top_k": 5
+  },
+  "llm": {
+    "modelo": [
+      "Qwen/Qwen2.5-1.5B-Instruct",
+      "989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+    ],
+    "politica": "greedy",
+    "decoding": {
+      "do_sample": false,
+      "repetition_penalty": 1.0,
+      "max_new_tokens": 192
+    },
+    "seed": 42
+  },
+  "prompts_sha256": {
+    "system_rag.txt": "7e805e0e4f407e85cc1b2e4db48a1febc7c3e5721b93d6daf9d58504c9ff68e1",
+    "usuario_rag.txt": "3bc56e75ff17abf9fa52054376588176541ed750faba45df9495d3fd82bbb2a1"
+  },
+  "consultas": [
+    "Q01",
+    "Q02",
+    "Q04",
+    "Q06",
+    "Q09",
+    "Q10",
+    "Q12",
+    "Q14",
+    "Q15",
+    "Q17",
+    "Q21",
+    "Q22"
+  ],
+  "versiones": {
+    "torch": "2.9.0+cpu",
+    "transformers": "4.57.1"
+  }
+}

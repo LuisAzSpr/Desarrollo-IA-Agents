@@ -1,0 +1,3 @@
+condicion,consultas,json_valido,formato_valido,correctas,parciales,incorrectas,no_responde,abstencion_correcta_en_controles,citas_total,citas_en_contexto_auto,citas_en_qrels_auto,citas_que_sustentan_manual,afirmaciones,afirmaciones_sustentadas,faithfulness,respuestas_con_afirmacion_no_sustentada,afirmaciones_sustentadas_con_su_cita,latencia_media_ms,latencia_p95_ms,prompt_tokens_medio
+closed_book,12,12,12,0,0,1,9,2/2,0,0/0,0/0,0/0,1,0,0.0,1,-,20150.0,25552.0,271.0
+rag_C,12,12,12,8,1,3,0,0/2,25,25/25,12/25,12/25,19,16,0.842,3,13/16,35285.0,48271.0,943.0
